@@ -233,7 +233,7 @@ def update_timeseries(b_part, climate_filter):
     fig.update_layout(
         title=f"{alias} ({b_part})",
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         xaxis=dict(gridcolor="LightGray"),
         xaxis_title="CalSim 3 simulation period (monthly timestep)",
         yaxis=dict(gridcolor="LightGray"),
@@ -286,7 +286,7 @@ def update_annual_timeseries(
     )
     fig.update_layout(
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         xaxis=dict(gridcolor="LightGray"),
         yaxis=dict(gridcolor="LightGray"),
         yaxis_title=f"{units} (annual {agg_method.lower()})",
@@ -311,7 +311,7 @@ def update_exceedance(b_part, monthchecklist, climate_filter):
 
     fig.update_layout(
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         xaxis=dict(gridcolor="LightGray"),
         yaxis=dict(gridcolor="LightGray"),
         yaxis_title=units,
@@ -334,7 +334,7 @@ def update_annual_exceedance(b_part, monthchecklist, yearwindow, climate_filter)
         fig = ann_exc_plot(df_plot, b_part, yearwindow)
         fig.update_layout(
             plot_bgcolor="white",
-            legend_title="Scenario",
+            legend_title="Adaptation Portfolio",
             xaxis=dict(gridcolor="LightGray"),
             yaxis=dict(gridcolor="LightGray"),
             yaxis_title="Thousand acre-feet per year",
@@ -396,7 +396,7 @@ def update_monthly(b_part, wytchecklist, slider_yr_range, climate_filter):
     )
     fig.update_layout(
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         xaxis=dict(
             tickmode="array",
             tickvals=monthfilter,
@@ -457,7 +457,7 @@ def update_bar_annual(b_part, wytchecklist, slider_yr_range, climate_filter):
 
         fig.update_layout(
             title=f"Annual average {alias} ({climate_filter})",
-            legend_title="Scenario",
+            legend_title="Adaptation Portfolio",
             barmode="relative",
             plot_bgcolor="white",
             yaxis_title=units,

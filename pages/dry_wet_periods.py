@@ -89,7 +89,7 @@ def layout():
         children=[
             html.H4("Data Filters"),
             create_button_filter(
-                label="Scenarios",
+                label="Adaptation Portfolio",
                 filter_id="filter-assumption",
                 options=ASSUMPTION_ORDER,
                 value=ASSUMPTION_ORDER,

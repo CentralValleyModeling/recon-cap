@@ -322,7 +322,7 @@ def card_bar_plot_wy_vert(
     )
     fig.update_layout(
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis_title="Climate",
         xaxis_tickformat=",d",
@@ -419,7 +419,7 @@ def card_bar_plot_orovl_CAP(
     )
     fig.update_layout(
         plot_bgcolor="white",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis_title="Climate",
         xaxis_tickformat=",d",
@@ -535,7 +535,7 @@ def mon_exc_plot(df, b_part, monthchecklist,climate):
         xaxis_title="Non Exceedance Probability (%)",
         xaxis_tickformat=",d",
         yaxis_title="",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis=dict(gridcolor="LightGrey"),
         yaxis=dict(gridcolor="LightGrey"),
@@ -597,7 +597,7 @@ def ann_exc_plot(
         xaxis_title="Non Exceedance Probability (%)",
         xaxis_tickformat=",d",
         yaxis_title="",
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis=dict(gridcolor="LightGrey"),
         yaxis=dict(gridcolor="LightGrey"),
@@ -633,7 +633,7 @@ def distplot(
         xaxis_title=xlabel,
         xaxis_tickformat=",d",
         yaxis_title=ylabel,
-        legend_title="Scenario",
+        legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis=dict(gridcolor="LightGrey"),
         yaxis=dict(gridcolor="LightGrey"),
