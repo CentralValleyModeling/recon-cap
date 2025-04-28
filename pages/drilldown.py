@@ -297,7 +297,7 @@ def update_annual_timeseries(
     return fig
 
 
-# Exceedance Plot
+# Monthly Exceedance Plot
 @callback(
     Output(component_id="exceedance-plot", component_property="figure"),
     Input(component_id="b-part", component_property="value"),
@@ -308,6 +308,7 @@ def update_exceedance(b_part, monthchecklist, climate_filter):
     
     df_plot = df_dv.loc[df_dv['Climate'] == climate_filter]
     units = get_unit_descriptions(var_dict, b_part)
+    #print(df_plot)
     
     fig = mon_exc_plot(df_plot, b_part, monthchecklist, climate_filter)
 
