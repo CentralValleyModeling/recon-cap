@@ -486,7 +486,6 @@ def ann_bar_plot(df, b_part="C_CAA003", startyr=1922, endyr=2021, wyt=[1, 2, 3, 
         barmode="relative",
         plot_bgcolor="white",
     )
-    # fig.update_xaxes(gridcolor='LightGrey')
     fig.update_yaxes(gridcolor="LightGrey")
     return fig
 
@@ -559,13 +558,15 @@ def ann_exc_plot(
     #df0 = df.loc[df["icm"].isin(convert_cm_nums(monthchecklist))]
     df0 = cfs_taf(df, var_dict)
     df0 = df0.groupby(["Assumption", yw]).sum(numeric_only=True)
+    unique_assumptions = df['Assumption'].unique().tolist()
 
     for assumption in ASSUMPTION_ORDER:
-        series_i = df0.loc[df0.index.get_level_values(0) == assumption, b_part]
-        series_i = series_i.sort_values()
-        series_i = series_i.reset_index(drop=True)
-        series_i.rename(assumption, inplace=True)
-        series_container.append(series_i)
+        if assumption in (unique_assumptions):
+            series_i = df0.loc[df0.index.get_level_values(0) == assumption, b_part]
+            series_i = series_i.sort_values()
+            series_i = series_i.reset_index(drop=True)
+            series_i.rename(assumption, inplace=True)
+            series_container.append(series_i)
 
     df3 = pd.concat(series_container, axis=1)
     fig1 = go.Figure()
@@ -588,7 +589,7 @@ def ann_exc_plot(
                 y=df["y"],
                 mode="lines",
                 name=column,
-                line=dict(color=PLOT_COLORS[i % len(PLOT_COLORS)]),
+                line=dict(color=SCENARIO_COLORS.get(column, "#cccccc")),
             )
         )
 
