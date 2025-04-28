@@ -229,6 +229,7 @@ def update_timeseries(b_part, climate_filter):
         y=b_part,
         color="Assumption",
         color_discrete_map=SCENARIO_COLORS,
+        category_orders={"Assumption": ASSUMPTION_ORDER}
     )
     fig.update_layout(
         title=f"{alias} ({b_part})",
@@ -283,6 +284,7 @@ def update_annual_timeseries(
         y=b_part,
         color="Assumption",
         color_discrete_map=SCENARIO_COLORS,
+        category_orders={"Assumption": ASSUMPTION_ORDER}
     )
     fig.update_layout(
         plot_bgcolor="white",
