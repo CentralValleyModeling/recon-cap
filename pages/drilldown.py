@@ -442,6 +442,7 @@ def update_bar_annual(b_part, wytchecklist, slider_yr_range, climate_filter):
     df_monthly = df_filtered.groupby(["Assumption", "iwm"]).mean(numeric_only=True)
     df_annual = df_monthly.groupby(["Assumption"]).sum(numeric_only=True)
     df_annual = df_annual.reindex(ASSUMPTION_ORDER, level="Assumption")
+    df_annual = df_annual.dropna(how="all", subset=None)
 
     if var_dict[b_part]["table_convert"] == "cfs_taf":
         units = "Thousand acre-feet per year"
