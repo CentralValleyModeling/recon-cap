@@ -417,13 +417,14 @@ def card_bar_plot_orovl_CAP(
         text_auto=True
 
     )
+    
     fig.update_layout(
         plot_bgcolor="white",
         legend_title="Adaptation Portfolio",
         showlegend=True,
         xaxis_title="Climate",
         xaxis_tickformat=",d",
-        yaxis_title="Percent < 1.6 MAF",
+        yaxis_title="Percent of Years < 1.6 MAF",
         yaxis_tickformat=",.0%",
         yaxis_showgrid=True,
         yaxis_gridcolor="lightgray",

@@ -25,7 +25,7 @@ PLOT_COLORS = [
 ASSUMPTION_ORDER = [
     "Baseline",
     "Maintain",
-    "Degradation",
+    "Deteriorating System",
     "FIRO",
     "SOD Storage",
     "DCP",
@@ -35,7 +35,7 @@ ASSUMPTION_ORDER = [
 SCENARIO_COLORS = {
     "Baseline": "#4d4d4d",
     "Maintain": "#999999",
-    "Degradation": "#ff6c66",
+    "Deteriorating System": "#ff6c66",
     "FIRO": "#55b4eb",
     "SOD Storage": "#0072b1",
     "DCP": "#003759",

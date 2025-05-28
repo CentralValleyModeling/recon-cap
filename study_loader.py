@@ -27,7 +27,7 @@ studies = [
 # ---------------------------------2043 CC50--------------------------------------
     Study(r"dss_files\CCA26_v3.7.0_BE_2043_50CC_LU100_SLR15_20241223.dss",  # Use CCA26
           r"dss_files\DCR2023_SV_Danube_2043_cc50_v1.9.dss",
-          "CCA26", "Degradation", "2043_CC50", 1),
+          "CCA26", "Deteriorating System", "2043_CC50", 1),
 
     Study(r"dss_files\CCA4_v3.7.0__2043_50CC_LU100_SLR15_20241220.dss",
           r"dss_files\DCR2023_SV_Danube_2043_cc50_v1.9.dss",
@@ -53,7 +53,7 @@ studies = [
 # ---------------------------------2043 CC95--------------------------------------
     Study(r"dss_files\CCA27_v3.7.0_BE_2043_95CC_LU100_SLR30_20241224.dss",  # Use CCA27
           r"dss_files\DCR2023_SV_Danube_2043_cc95_v1.9.dss",
-          "CCA27", "Degradation", "2043_CC95", 1),
+          "CCA27", "Deteriorating System", "2043_CC95", 1),
 
     Study(r"dss_files\CCA5_v3.7.0__2043_95CC_LU100_SLR30_20241227.dss",
           r"dss_files\DCR2023_SV_Danube_2043_cc95_v1.9.dss",
