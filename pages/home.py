@@ -58,6 +58,15 @@ ta_card = CardWidget(
     charts=card_bar_plot_wy_vert(df_dv, b_part="SWP_TA_CO_SOD", climate_order=CLIMATE_ORDER),
 )
 
+a21_card = CardWidget(
+    "SWP Article 21 deliveries",
+    button_id="SWP_IN_SOD",
+    button_label="Drilldown",
+    popover_label="a21-info",
+    popover_content=load_markdown("page_text/info-article-21.md"),
+    charts=card_bar_plot_wy_vert(df_dv, b_part="SWP_IN_SOD", climate_order=CLIMATE_ORDER),
+)
+
 ndoi_card = CardWidget(
     "Total Delta outflow",
     button_id="NDOI",
@@ -132,6 +141,15 @@ def layout():
                         children=[
                             dbc.Col(
                                 class_name="col-md-12", children=[ta_card.create_card()]
+                            ),
+                            html.Hr(style={"margin": "0.5rem 0"}),
+                        ],
+                    ),
+                    dbc.Row(
+                        id="home-cards-row-0",
+                        children=[
+                            dbc.Col(
+                                class_name="col-md-12", children=[a21_card.create_card()]
                             ),
                             html.Hr(style={"margin": "0.5rem 0"}),
                         ],

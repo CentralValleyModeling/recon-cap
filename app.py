@@ -60,8 +60,6 @@ def toggle_navbar(n, is_open):
         return not is_open
     return is_open
 
-
-
 app.layout = html.Div(
     [
         dcc.Location(id="url", refresh=False),
