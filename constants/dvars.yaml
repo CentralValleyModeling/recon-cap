@@ -7,7 +7,7 @@ CVPTOTALDEL:
   type: Delivery
   units: cfs
 C_CAA003:
-  alias: Total Banks Exports
+  alias: Export - Total Banks Exports
   bpart: C_CAA003
   pathname: /CALSIM/C_CAA003/.*//.*/.*/
   table_convert: cfs_taf
@@ -15,7 +15,7 @@ C_CAA003:
   type: Export
   units: cfs  
 C_CAA003_CVC:
-  alias: Other - Banks Export Cross Valley Pumping
+  alias: Export - Banks Export Cross Valley Pumping
   bpart: C_CAA003_CVC
   pathname: /CALSIM/C_CAA003_CVC/.*//.*/.*/
   table_convert: cfs_taf
@@ -23,7 +23,7 @@ C_CAA003_CVC:
   type: Export
   units: cfs
 C_CAA003_CVP:
-  alias: Banks CVP Exports
+  alias: Export - Banks CVP Exports
   bpart: C_CAA003_CVP
   pathname: /CALSIM/C_CAA003_CVP/.*//.*/.*/
   table_convert: cfs_taf
@@ -31,7 +31,7 @@ C_CAA003_CVP:
   type: Export
   units: cfs
 C_CAA003_IF:
-  alias: Other - Banks PP North Delta
+  alias: Export - Banks Pumping Plant North Delta
   bpart: C_CAA003_IF
   pathname: /CALSIM/C_CAA003_IF/.*//.*/.*/
   table_convert: cfs_taf
@@ -39,7 +39,7 @@ C_CAA003_IF:
   type: Export
   units: cfs
 C_CAA003_SWP:
-  alias: Banks SWP Exports
+  alias: Export - Banks SWP Exports
   bpart: C_CAA003_SWP
   pathname: /CALSIM/C_CAA003_SWP/.*//.*/.*/
   table_convert: cfs_taf
@@ -47,7 +47,7 @@ C_CAA003_SWP:
   type: Export
   units: cfs
 C_CAA003_SWP_TD:
-  alias: Other - Banks PP SWP Through Delta
+  alias: Export - Banks Pumping Plant SWP Through Delta
   bpart: C_CAA003_SWP_TD
   pathname: /CALSIM/C_CAA003_SWP_TD/.*//.*/.*/
   table_convert: cfs_taf
@@ -55,7 +55,7 @@ C_CAA003_SWP_TD:
   type: Export
   units: cfs
 C_CAA003_TD:
-  alias: Other - Banks PP Through Delta
+  alias: Export - Banks Pumping Plant Through Delta
   bpart: C_CAA003_TD
   pathname: /CALSIM/C_CAA003_TD/.*//.*/.*/
   table_convert: cfs_taf
@@ -63,7 +63,7 @@ C_CAA003_TD:
   type: Export
   units: cfs
 C_CAA003_WTS:
-  alias: Banks Export WTS
+  alias: Export - Banks Export WTS
   bpart: C_CAA003_WTS
   pathname: /CALSIM/C_CAA003_WTS/.*//.*/.*/
   table_convert: cfs_taf
@@ -71,7 +71,7 @@ C_CAA003_WTS:
   type: Export
   units: cfs
 C_DMC000:
-  alias: Total Jones Exports
+  alias: Export - Total Jones Exports
   bpart: C_DMC000
   pathname: /CALSIM/C_DMC000/.*//.*/.*/
   table_convert: cfs_taf
@@ -79,7 +79,7 @@ C_DMC000:
   type: Export
   units: cfs
 C_DMC000_CVP:
-  alias: Jones CVP Exports
+  alias: Export - Jones CVP Exports
   bpart: C_DMC000_CVP
   pathname: /CALSIM/C_DMC000_CVP/.*//.*/.*/
   table_convert: cfs_taf
@@ -87,7 +87,7 @@ C_DMC000_CVP:
   type: Export
   units: cfs
 C_DMC000_IF:
-  alias: Other - Jones PP North Delta
+  alias: Export - Jones Pumping Plant North Delta
   bpart: C_DMC000_IF
   pathname: /CALSIM/C_DMC000_IF/.*//.*/.*/
   table_convert: cfs_taf
@@ -95,7 +95,7 @@ C_DMC000_IF:
   type: Export
   units: cfs
 C_DMC000_TD:
-  alias: Other - Jones PP Through Delta
+  alias: Export - Jones Pumping Plant Through Delta
   bpart: C_DMC000_TD
   pathname: /CALSIM/C_DMC000_TD/.*//.*/.*/
   table_convert: cfs_taf
@@ -103,7 +103,7 @@ C_DMC000_TD:
   type: Export
   units: cfs
 C_OMR014:
-  alias: Old and Middle River flow
+  alias: Flow - Old and Middle River
   bpart: C_OMR014
   pathname: /CALSIM/C_OMR014/.*//.*/.*/
   table_convert: cfs_taf
@@ -119,7 +119,7 @@ C_SAC000:
   type: Delta
   units: cfs
 C_SAC017:
-  alias: Delta - Flow at Rio Vista
+  alias: Flow - Sacramento R. at Rio Vista
   bpart: C_SAC017
   pathname: /CALSIM/C_SAC017/.*//.*/.*/
   table_convert: cfs_taf
@@ -127,7 +127,7 @@ C_SAC017:
   type: Delta
   units: cfs
 C_SAC029B:
-  alias: Delta - Flow at Georgiana Slough
+  alias: Flow - Sacramento R. at Georgiana Slough
   bpart: C_SAC029B
   pathname: /CALSIM/C_SAC029B/.*//.*/.*/
   table_convert: cfs_taf
@@ -135,7 +135,7 @@ C_SAC029B:
   type: Delta
   units: cfs
 C_SAC030:
-  alias: Delta - Flow below DXC
+  alias: Flow - Sacramento R. Below Delta Cross Channel
   bpart: C_SAC030
   pathname: /CALSIM/C_SAC030/.*//.*/.*/
   table_convert: cfs_taf
@@ -143,7 +143,7 @@ C_SAC030:
   type: Delta
   units: cfs
 C_SAC041:
-  alias: Sac R. Flow at Hood
+  alias: Flow - Sacramento R. at Hood
   bpart: C_SAC041
   pathname: /CALSIM/C_SAC041/.*//.*/.*/
   table_convert: cfs_taf
@@ -151,7 +151,7 @@ C_SAC041:
   type: Upstream Flows
   units: cfs
 C_SAC048:
-  alias: Sac R. Flow at Freeport
+  alias: Flow - Sacramento R. at Freeport
   bpart: C_SAC048
   pathname: /CALSIM/C_SAC048/.*//.*/.*/
   table_convert: cfs_taf
@@ -159,7 +159,7 @@ C_SAC048:
   type: Upstream Flows
   units: cfs
 C_SAC083:
-  alias: Sac R. Flow at Verona
+  alias: Flow - Sacramento R. at Verona
   bpart: C_SAC083
   pathname: /CALSIM/C_SAC083/.*//.*/.*/
   table_convert: cfs_taf
@@ -167,7 +167,7 @@ C_SAC083:
   type: Upstream Flows
   units: cfs
 C_SAC085:
-  alias: Sac R. Flow Above Fremont Weir
+  alias: Flow - Sacramento R. Above Fremont Weir
   bpart: C_SAC085
   pathname: /CALSIM/C_SAC085/.*//.*/.*/
   table_convert: cfs_taf
@@ -175,7 +175,7 @@ C_SAC085:
   type: Upstream Flows
   units: cfs
 C_SAC097:
-  alias: Sac R. Flow at Wilkins Slough
+  alias: Flow - Sacramento R. at Wilkins Slough
   bpart: C_SAC097
   pathname: /CALSIM/C_SAC097/.*//.*/.*/
   table_convert: cfs_taf
@@ -183,7 +183,7 @@ C_SAC097:
   type: Upstream Flows
   units: cfs
 C_SAC240:
-  alias: Sac R. Flow at RedBluff
+  alias: Flow - Sacramento R. at Red Bluff
   bpart: C_SAC240
   pathname: /CALSIM/C_SAC240/.*//.*/.*/
   table_convert: cfs_taf
@@ -191,17 +191,9 @@ C_SAC240:
   type: Upstream Flows
   units: cfs
 D408:
-  alias: Delta - CCWD
+  alias: Diversions - Contra Costa Water District
   bpart: D408
   pathname: /CALSIM/D408/.*//.*/.*/
-  table_convert: cfs_taf
-  table_display: wy
-  type: Channel
-  units: cfs
-DELTAINFLOWFORNDOI:
-  alias: Delta - Delta Inflow (NDOI)
-  bpart: DELTAINFLOWFORNDOI
-  pathname: /CALSIM/DELTAINFLOWFORNDOI/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
   type: Channel
@@ -295,7 +287,7 @@ DEL_CVP_TOTAL_S:
   type: Channel
   units: cfs
 DEL_SWP_PIN:
-  alias: Other - SWP Delivery Int
+  alias: Delivery - SWP A21 Delivery
   bpart: DEL_SWP_PIN
   pathname: /CALSIM/DEL_SWP_PIN/.*//.*/.*/
   table_convert: cfs_taf
@@ -303,7 +295,7 @@ DEL_SWP_PIN:
   type: Channel
   units: cfs
 D_OMR027_CAA000:
-  alias: Delta - Banks Exports
+  alias: Export - Banks Pumping Plant Total
   bpart: D_OMR027_CAA000
   pathname: /CALSIM/D_OMR027_CAA000/.*//.*/.*/
   table_convert: cfs_taf
@@ -311,7 +303,7 @@ D_OMR027_CAA000:
   type: Channel
   units: cfs
 D_OMR028_DMC000:
-  alias: Delta - Jones Exports
+  alias: Export - Jones Pumping Plant Total
   bpart: D_OMR028_DMC000
   pathname: /CALSIM/D_OMR028_DMC000/.*//.*/.*/
   table_convert: cfs_taf
@@ -319,7 +311,7 @@ D_OMR028_DMC000:
   type: Channel
   units: cfs
 D_SAC030_MOK014:
-  alias: Delta - DXC Flow
+  alias: Flow - Delta Cross Channel
   bpart: D_SAC030_MOK014
   pathname: /CALSIM/D_SAC030_MOK014/.*//.*/.*/
   table_convert: cfs_taf
@@ -327,7 +319,7 @@ D_SAC030_MOK014:
   type: Channel
   units: cfs
 EM_EC_MONTH:
-  alias: Salinity - EM EC
+  alias: Salinity - Emmaton EC
   bpart: EM_EC_MONTH
   pathname: /CALSIM/EM_EC_MONTH/.*//.*/.*/
   table_convert: cfs_taf
@@ -335,7 +327,7 @@ EM_EC_MONTH:
   type: Channel
   units: ec
 EXPORTACTUALIF:
-  alias: Delta - Total NDD Exports
+  alias: Export - Total NDD Exports
   bpart: EXPORTACTUALIF
   pathname: /CALSIM/EXPORTACTUALIF/.*//.*/.*/
   table_convert: cfs_taf
@@ -343,7 +335,7 @@ EXPORTACTUALIF:
   type: Channel
   units: cfs
 EXPORTACTUALTD:
-  alias: Delta - Total TD Exports
+  alias: Export - Total Through-Delta Exports
   bpart: EXPORTACTUALTD
   pathname: /CALSIM/EXPORTACTUALTD/.*//.*/.*/
   table_convert: cfs_taf
@@ -351,7 +343,7 @@ EXPORTACTUALTD:
   type: Channel
   units: cfs
 JP_EC_MONTH:
-  alias: Salinity - JP EC
+  alias: Salinity - Jersey Point EC
   bpart: JP_EC_MONTH
   pathname: /CALSIM/JP_EC_MONTH/.*//.*/.*/
   table_convert: cfs_taf
@@ -743,7 +735,7 @@ S_LOSVQ:
   type: Reservoir Storage
   units: taf
 WYT_SAC_:
-  alias: Sacramento Valley Index (SVI) WYT Classification
+  alias: Index -Sacramento Valley Index (SVI) WYT Classification
   bpart: WYT_SAC_
   pathname: /CALSIM/WYT_SAC_/.*//.*/.*/
   table_convert: orig
@@ -759,7 +751,7 @@ X2_PRV:
   type: Channel
   units: km
 DELTAINFLOWFORNDOI:
-  alias: Delta Inflow
+  alias: Delta - Delta Inflow
   bpart: DELTAINFLOWFORNDOI
   pathname: /CALSIM/DELTAINFLOWFORNDOI/.*//.*/.*/
   table_convert: cfs_taf
@@ -767,7 +759,7 @@ DELTAINFLOWFORNDOI:
   type: Delta
   units: cfs
 SWP_CO_ACFC:
-  alias: Alameda County FC&WCD, Zone 7
+  alias: Delivery A56 - Alameda County FC&WCD, Zone 7
   bpart: SWP_CO_ACFC
   pathname: /CALSIM/SWP_CO_ACFC/.*//.*/.*/
   table_convert: cfs_taf
@@ -775,7 +767,7 @@ SWP_CO_ACFC:
   type: Delivery - CO
   units: cfs
 SWP_CO_ACWD:
-  alias: Alameda County WD
+  alias: Delivery A56 - Alameda County WD
   bpart: SWP_CO_ACWD
   pathname: /CALSIM/SWP_CO_ACWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -783,7 +775,7 @@ SWP_CO_ACWD:
   type: Delivery - CO
   units: cfs
 SWP_CO_AVEK:
-  alias: Antelope Valley-East Kern WA
+  alias: Delivery A56 - Antelope Valley-East Kern WA
   bpart: SWP_CO_AVEK
   pathname: /CALSIM/SWP_CO_AVEK/.*//.*/.*/
   table_convert: cfs_taf
@@ -791,7 +783,7 @@ SWP_CO_AVEK:
   type: Delivery - CO
   units: cfs
 SWP_CO_CLA:
-  alias: Crestline-Line Arrowhead WA
+  alias: Delivery A56 - Crestline-Line Arrowhead WA
   bpart: SWP_CO_CLA
   pathname: /CALSIM/SWP_CO_CLA/.*//.*/.*/
   table_convert: cfs_taf
@@ -799,7 +791,7 @@ SWP_CO_CLA:
   type: Delivery - CO
   units: cfs
 SWP_CO_CLWA1:
-  alias: Santa Clarita WA (San Joaquin)
+  alias: Delivery A56 - Santa Clarita WA (San Joaquin)
   bpart: SWP_CO_CLWA1
   pathname: /CALSIM/SWP_CO_CLWA1/.*//.*/.*/
   table_convert: cfs_taf
@@ -807,7 +799,7 @@ SWP_CO_CLWA1:
   type: Delivery - CO
   units: cfs
 SWP_CO_CLWA2:
-  alias: Santa Clarita WA (South Coast)
+  alias: Delivery A56 - Santa Clarita WA (South Coast)
   bpart: SWP_CO_CLWA2
   pathname: /CALSIM/SWP_CO_CLWA2/.*//.*/.*/
   table_convert: cfs_taf
@@ -815,7 +807,7 @@ SWP_CO_CLWA2:
   type: Delivery - CO
   units: cfs
 SWP_CO_CVWD:
-  alias: Coachella Valley WD
+  alias: Delivery A56 - Coachella Valley WD
   bpart: SWP_CO_CVWD
   pathname: /CALSIM/SWP_CO_CVWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -823,7 +815,7 @@ SWP_CO_CVWD:
   type: Delivery - CO
   units: cfs
 SWP_CO_DESERT:
-  alias: Desert WA
+  alias: Delivery A56 - Desert WA
   bpart: SWP_CO_DESERT
   pathname: /CALSIM/SWP_CO_DESERT/.*//.*/.*/
   table_convert: cfs_taf
@@ -831,7 +823,7 @@ SWP_CO_DESERT:
   type: Delivery - CO
   units: cfs
 SWP_CO_DUDLEY:
-  alias: Dudley Ridge WD
+  alias: Delivery A56 - Dudley Ridge WD
   bpart: SWP_CO_DUDLEY
   pathname: /CALSIM/SWP_CO_DUDLEY/.*//.*/.*/
   table_convert: cfs_taf
@@ -839,7 +831,7 @@ SWP_CO_DUDLEY:
   type: Delivery - CO
   units: cfs
 SWP_CO_EMPIRE:
-  alias: Empire West Side ID
+  alias: Delivery A56 - Empire West Side ID
   bpart: SWP_CO_EMPIRE
   pathname: /CALSIM/SWP_CO_EMPIRE/.*//.*/.*/
   table_convert: cfs_taf
@@ -847,7 +839,7 @@ SWP_CO_EMPIRE:
   type: Delivery - CO
   units: cfs
 SWP_CO_KERN:
-  alias: Kern Counta WA
+  alias: Delivery A56 - Kern Counta WA
   bpart: SWP_CO_KERN
   pathname: /CALSIM/SWP_CO_KERN/.*//.*/.*/
   table_convert: cfs_taf
@@ -855,7 +847,7 @@ SWP_CO_KERN:
   type: Delivery - CO
   units: cfs
 SWP_CO_KINGS:
-  alias: County of Kings
+  alias: Delivery A56 - County of Kings
   bpart: SWP_CO_KINGS
   pathname: /CALSIM/SWP_CO_KINGS/.*//.*/.*/
   table_convert: cfs_taf
@@ -863,7 +855,7 @@ SWP_CO_KINGS:
   type: Delivery - CO
   units: cfs
 SWP_CO_LCID:
-  alias: Littlerock Creek ID
+  alias: Delivery A56 - Littlerock Creek ID
   bpart: SWP_CO_LCID
   pathname: /CALSIM/SWP_CO_LCID/.*//.*/.*/
   table_convert: cfs_taf
@@ -871,7 +863,7 @@ SWP_CO_LCID:
   type: Delivery - CO
   units: cfs
 SWP_CO_MWA:
-  alias: Mojave WA
+  alias: Delivery A56 - Mojave WA
   bpart: SWP_CO_MWA
   pathname: /CALSIM/SWP_CO_MWA/.*//.*/.*/
   table_convert: cfs_taf
@@ -879,7 +871,7 @@ SWP_CO_MWA:
   type: Delivery - CO
   units: cfs
 SWP_CO_MWD:
-  alias: Metropolitan WDSC
+  alias: Delivery A56 - Metropolitan WDSC
   bpart: SWP_CO_MWD
   pathname: /CALSIM/SWP_CO_MWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -887,7 +879,7 @@ SWP_CO_MWD:
   type: Delivery - CO
   units: cfs
 SWP_CO_NAPA:
-  alias: Napa County FC&WCD
+  alias: Delivery A56 - Napa County FC&WCD
   bpart: SWP_CO_NAPA
   pathname: /CALSIM/SWP_CO_NAPA/.*//.*/.*/
   table_convert: cfs_taf
@@ -895,7 +887,7 @@ SWP_CO_NAPA:
   type: Delivery - CO
   units: cfs
 SWP_CO_OAK:
-  alias: Oak Flat WD
+  alias: Delivery A56 - Oak Flat WD
   bpart: SWP_CO_OAK
   pathname: /CALSIM/SWP_CO_OAK/.*//.*/.*/
   table_convert: cfs_taf
@@ -903,7 +895,7 @@ SWP_CO_OAK:
   type: Delivery - CO
   units: cfs
 SWP_CO_PWD:
-  alias: Palmdale WD
+  alias: Delivery A56 - Palmdale WD
   bpart: SWP_CO_PWD
   pathname: /CALSIM/SWP_CO_PWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -911,7 +903,7 @@ SWP_CO_PWD:
   type: Delivery - CO
   units: cfs
 SWP_CO_SB:
-  alias: Santa Barbara County FC&WCD
+  alias: Delivery A56 - Santa Barbara County FC&WCD
   bpart: SWP_CO_SB
   pathname: /CALSIM/SWP_CO_SB/.*//.*/.*/
   table_convert: cfs_taf
@@ -919,7 +911,7 @@ SWP_CO_SB:
   type: Delivery - CO
   units: cfs
 SWP_CO_SBV:
-  alias: San Bernadino Valley MWD
+  alias: Delivery A56 - San Bernadino Valley MWD
   bpart: SWP_CO_SBV
   pathname: /CALSIM/SWP_CO_SBV/.*//.*/.*/
   table_convert: cfs_taf
@@ -927,7 +919,7 @@ SWP_CO_SBV:
   type: Delivery - CO
   units: cfs
 SWP_CO_SCV:
-  alias: Santa Clara Valley WD
+  alias: Delivery A56 - Santa Clara Valley WD
   bpart: SWP_CO_SCV
   pathname: /CALSIM/SWP_CO_SCV/.*//.*/.*/
   table_convert: cfs_taf
@@ -935,7 +927,7 @@ SWP_CO_SCV:
   type: Delivery - CO
   units: cfs
 SWP_CO_SGP:
-  alias: San Gorgonio Pass WA
+  alias: Delivery A56 - San Gorgonio Pass WA
   bpart: SWP_CO_SGP
   pathname: /CALSIM/SWP_CO_SGP/.*//.*/.*/
   table_convert: cfs_taf
@@ -943,7 +935,7 @@ SWP_CO_SGP:
   type: Delivery - CO
   units: cfs
 SWP_CO_SGV:
-  alias: San Gabriel Valley MWD
+  alias: Delivery A56 - San Gabriel Valley MWD
   bpart: SWP_CO_SGV
   pathname: /CALSIM/SWP_CO_SGV/.*//.*/.*/
   table_convert: cfs_taf
@@ -951,7 +943,7 @@ SWP_CO_SGV:
   type: Delivery - CO
   units: cfs
 SWP_CO_SLO:
-  alias: San Luis Obispo County FC&WCD
+  alias: Delivery A56 - San Luis Obispo County FC&WCD
   bpart: SWP_CO_SLO
   pathname: /CALSIM/SWP_CO_SLO/.*//.*/.*/
   table_convert: cfs_taf
@@ -959,7 +951,7 @@ SWP_CO_SLO:
   type: Delivery - CO
   units: cfs
 SWP_CO_SOLANO:
-  alias: Solano County WA
+  alias: Delivery A56 - Solano County WA
   bpart: SWP_CO_SOLANO
   pathname: /CALSIM/SWP_CO_SOLANO/.*//.*/.*/
   table_convert: cfs_taf
@@ -967,7 +959,7 @@ SWP_CO_SOLANO:
   type: Delivery - CO
   units: cfs
 SWP_CO_TULARE:
-  alias: Tulare Lake Basin WSD
+  alias: Delivery A56 - Tulare Lake Basin WSD
   bpart: SWP_CO_TULARE
   pathname: /CALSIM/SWP_CO_TULARE/.*//.*/.*/
   table_convert: cfs_taf
@@ -975,7 +967,7 @@ SWP_CO_TULARE:
   type: Delivery - CO
   units: cfs
 SWP_CO_VC:
-  alias: Ventura County FCD
+  alias: Delivery A56 - Ventura County FCD
   bpart: SWP_CO_VC
   pathname: /CALSIM/SWP_CO_VC/.*//.*/.*/
   table_convert: cfs_taf
@@ -983,7 +975,7 @@ SWP_CO_VC:
   type: Delivery - CO
   units: cfs
 SWP_IN_ACFC:
-  alias: Alameda County FC&WCD, Zone 7
+  alias: Delivery A21 - Alameda County FC&WCD, Zone 7
   bpart: SWP_IN_ACFC
   pathname: /CALSIM/SWP_IN_ACFC/.*//.*/.*/
   table_convert: cfs_taf
@@ -991,7 +983,7 @@ SWP_IN_ACFC:
   type: Delivery - IN
   units: cfs
 SWP_IN_ACWD:
-  alias: Alameda County WD
+  alias: Delivery A21 - Alameda County WD
   bpart: SWP_IN_ACWD
   pathname: /CALSIM/SWP_IN_ACWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -999,7 +991,7 @@ SWP_IN_ACWD:
   type: Delivery - IN
   units: cfs
 SWP_IN_AVEK:
-  alias: Antelope Valley-East Kern WA
+  alias: Delivery A21 - Antelope Valley-East Kern WA
   bpart: SWP_IN_AVEK
   pathname: /CALSIM/SWP_IN_AVEK/.*//.*/.*/
   table_convert: cfs_taf
@@ -1007,7 +999,7 @@ SWP_IN_AVEK:
   type: Delivery - IN
   units: cfs
 SWP_IN_CLA:
-  alias: Crestline-Line Arrowhead WA
+  alias: Delivery A21 - Crestline-Line Arrowhead WA
   bpart: SWP_IN_CLA
   pathname: /CALSIM/SWP_IN_CLA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1015,7 +1007,7 @@ SWP_IN_CLA:
   type: Delivery - IN
   units: cfs
 SWP_IN_CLWA1:
-  alias: Santa Clarita WA (San Joaquin)
+  alias: Delivery A21 - Santa Clarita WA (San Joaquin)
   bpart: SWP_IN_CLWA1
   pathname: /CALSIM/SWP_IN_CLWA1/.*//.*/.*/
   table_convert: cfs_taf
@@ -1023,7 +1015,7 @@ SWP_IN_CLWA1:
   type: Delivery - IN
   units: cfs
 SWP_IN_CLWA2:
-  alias: Santa Clarita WA (South Coast)
+  alias: Delivery A21 - Santa Clarita WA (South Coast)
   bpart: SWP_IN_CLWA2
   pathname: /CALSIM/SWP_IN_CLWA2/.*//.*/.*/
   table_convert: cfs_taf
@@ -1031,7 +1023,7 @@ SWP_IN_CLWA2:
   type: Delivery - IN
   units: cfs
 SWP_IN_CVWD:
-  alias: Coachella Valley WD
+  alias: Delivery A21 - Coachella Valley WD
   bpart: SWP_IN_CVWD
   pathname: /CALSIM/SWP_IN_CVWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1039,7 +1031,7 @@ SWP_IN_CVWD:
   type: Delivery - IN
   units: cfs
 SWP_IN_DESERT:
-  alias: Desert WA
+  alias: Delivery A21 - Desert WA
   bpart: SWP_IN_DESERT
   pathname: /CALSIM/SWP_IN_DESERT/.*//.*/.*/
   table_convert: cfs_taf
@@ -1047,7 +1039,7 @@ SWP_IN_DESERT:
   type: Delivery - IN
   units: cfs
 SWP_IN_DUDLEY:
-  alias: Dudley Ridge WD
+  alias: Delivery A21 - Dudley Ridge WD
   bpart: SWP_IN_DUDLEY
   pathname: /CALSIM/SWP_IN_DUDLEY/.*//.*/.*/
   table_convert: cfs_taf
@@ -1055,7 +1047,7 @@ SWP_IN_DUDLEY:
   type: Delivery - IN
   units: cfs
 SWP_IN_EMPIRE:
-  alias: Empire West Side ID
+  alias: Delivery A21 - Empire West Side ID
   bpart: SWP_IN_EMPIRE
   pathname: /CALSIM/SWP_IN_EMPIRE/.*//.*/.*/
   table_convert: cfs_taf
@@ -1063,7 +1055,7 @@ SWP_IN_EMPIRE:
   type: Delivery - IN
   units: cfs
 SWP_IN_KERN:
-  alias: Kern Counta WA
+  alias: Delivery A21 - Kern Counta WA
   bpart: SWP_IN_KERN
   pathname: /CALSIM/SWP_IN_KERN/.*//.*/.*/
   table_convert: cfs_taf
@@ -1071,7 +1063,7 @@ SWP_IN_KERN:
   type: Delivery - IN
   units: cfs
 SWP_IN_KINGS:
-  alias: County of Kings
+  alias: Delivery A21 - County of Kings
   bpart: SWP_IN_KINGS
   pathname: /CALSIM/SWP_IN_KINGS/.*//.*/.*/
   table_convert: cfs_taf
@@ -1079,7 +1071,7 @@ SWP_IN_KINGS:
   type: Delivery - IN
   units: cfs
 SWP_IN_LCID:
-  alias: Littlerock Creek ID
+  alias: Delivery A21 - Littlerock Creek ID
   bpart: SWP_IN_LCID
   pathname: /CALSIM/SWP_IN_LCID/.*//.*/.*/
   table_convert: cfs_taf
@@ -1087,7 +1079,7 @@ SWP_IN_LCID:
   type: Delivery - IN
   units: cfs
 SWP_IN_MWA:
-  alias: Mojave WA
+  alias: Delivery A21 - Mojave WA
   bpart: SWP_IN_MWA
   pathname: /CALSIM/SWP_IN_MWA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1095,7 +1087,7 @@ SWP_IN_MWA:
   type: Delivery - IN
   units: cfs
 SWP_IN_MWD:
-  alias: Metropolitan WDSC
+  alias: Delivery A21 - Metropolitan WDSC
   bpart: SWP_IN_MWD
   pathname: /CALSIM/SWP_IN_MWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1103,7 +1095,7 @@ SWP_IN_MWD:
   type: Delivery - IN
   units: cfs
 SWP_IN_NAPA:
-  alias: Napa County FC&WCD
+  alias: Delivery A21 - Napa County FC&WCD
   bpart: SWP_IN_NAPA
   pathname: /CALSIM/SWP_IN_NAPA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1111,7 +1103,7 @@ SWP_IN_NAPA:
   type: Delivery - IN
   units: cfs
 SWP_IN_OAK:
-  alias: Oak Flat WD
+  alias: Delivery A21 - Oak Flat WD
   bpart: SWP_IN_OAK
   pathname: /CALSIM/SWP_IN_OAK/.*//.*/.*/
   table_convert: cfs_taf
@@ -1119,7 +1111,7 @@ SWP_IN_OAK:
   type: Delivery - IN
   units: cfs
 SWP_IN_PWD:
-  alias: Palmdale WD
+  alias: Delivery A21 - Palmdale WD
   bpart: SWP_IN_PWD
   pathname: /CALSIM/SWP_IN_PWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1127,7 +1119,7 @@ SWP_IN_PWD:
   type: Delivery - IN
   units: cfs
 SWP_IN_SB:
-  alias: Santa Barbara County FC&WCD
+  alias: Delivery A21 - Santa Barbara County FC&WCD
   bpart: SWP_IN_SB
   pathname: /CALSIM/SWP_IN_SB/.*//.*/.*/
   table_convert: cfs_taf
@@ -1135,7 +1127,7 @@ SWP_IN_SB:
   type: Delivery - IN
   units: cfs
 SWP_IN_SBV:
-  alias: San Bernadino Valley MWD
+  alias: Delivery A21 - San Bernadino Valley MWD
   bpart: SWP_IN_SBV
   pathname: /CALSIM/SWP_IN_SBV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1143,7 +1135,7 @@ SWP_IN_SBV:
   type: Delivery - IN
   units: cfs
 SWP_IN_SCV:
-  alias: Santa Clara Valley WD
+  alias: Delivery A21 - Santa Clara Valley WD
   bpart: SWP_IN_SCV
   pathname: /CALSIM/SWP_IN_SCV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1151,7 +1143,7 @@ SWP_IN_SCV:
   type: Delivery - IN
   units: cfs
 SWP_IN_SGP:
-  alias: San Gorgonio Pass WA
+  alias: Delivery A21 - San Gorgonio Pass WA
   bpart: SWP_IN_SGP
   pathname: /CALSIM/SWP_IN_SGP/.*//.*/.*/
   table_convert: cfs_taf
@@ -1159,7 +1151,7 @@ SWP_IN_SGP:
   type: Delivery - IN
   units: cfs
 SWP_IN_SGV:
-  alias: San Gabriel Valley MWD
+  alias: Delivery A21 - San Gabriel Valley MWD
   bpart: SWP_IN_SGV
   pathname: /CALSIM/SWP_IN_SGV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1167,7 +1159,7 @@ SWP_IN_SGV:
   type: Delivery - IN
   units: cfs
 SWP_IN_SLO:
-  alias: San Luis Obispo County FC&WCD
+  alias: Delivery A21 - San Luis Obispo County FC&WCD
   bpart: SWP_IN_SLO
   pathname: /CALSIM/SWP_IN_SLO/.*//.*/.*/
   table_convert: cfs_taf
@@ -1175,7 +1167,7 @@ SWP_IN_SLO:
   type: Delivery - IN
   units: cfs
 SWP_IN_SOLANO:
-  alias: Solano County WA
+  alias: Delivery A21 - Solano County WA
   bpart: SWP_IN_SOLANO
   pathname: /CALSIM/SWP_IN_SOLANO/.*//.*/.*/
   table_convert: cfs_taf
@@ -1183,7 +1175,7 @@ SWP_IN_SOLANO:
   type: Delivery - IN
   units: cfs
 SWP_IN_TULARE:
-  alias: Tulare Lake Basin WSD
+  alias: Delivery A21 - Tulare Lake Basin WSD
   bpart: SWP_IN_TULARE
   pathname: /CALSIM/SWP_IN_TULARE/.*//.*/.*/
   table_convert: cfs_taf
@@ -1191,7 +1183,7 @@ SWP_IN_TULARE:
   type: Delivery - IN
   units: cfs
 SWP_IN_VC:
-  alias: Ventura County FCD
+  alias: Delivery A21 - Ventura County FCD
   bpart: SWP_IN_VC
   pathname: /CALSIM/SWP_IN_VC/.*//.*/.*/
   table_convert: cfs_taf
@@ -1199,7 +1191,7 @@ SWP_IN_VC:
   type: Delivery - IN
   units: cfs
 SWP_TA_ACFC:
-  alias: Alameda County FC&WCD, Zone 7
+  alias: Delivery TA - Alameda County FC&WCD, Zone 7
   bpart: SWP_TA_ACFC
   pathname: /CALSIM/SWP_TA_ACFC/.*//.*/.*/
   table_convert: cfs_taf
@@ -1207,7 +1199,7 @@ SWP_TA_ACFC:
   type: Delivery - TA
   units: cfs
 SWP_TA_ACWD:
-  alias: Alameda County WD
+  alias: Delivery TA - Alameda County WD
   bpart: SWP_TA_ACWD
   pathname: /CALSIM/SWP_TA_ACWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1215,7 +1207,7 @@ SWP_TA_ACWD:
   type: Delivery - TA
   units: cfs
 SWP_TA_AVEK:
-  alias: Antelope Valley-East Kern WA
+  alias: Delivery TA - Antelope Valley-East Kern WA
   bpart: SWP_TA_AVEK
   pathname: /CALSIM/SWP_TA_AVEK/.*//.*/.*/
   table_convert: cfs_taf
@@ -1223,7 +1215,7 @@ SWP_TA_AVEK:
   type: Delivery - TA
   units: cfs
 SWP_TA_CLA:
-  alias: Crestline-Line Arrowhead WA
+  alias: Delivery TA - Crestline-Line Arrowhead WA
   bpart: SWP_TA_CLA
   pathname: /CALSIM/SWP_TA_CLA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1231,7 +1223,7 @@ SWP_TA_CLA:
   type: Delivery - TA
   units: cfs
 SWP_TA_CLWA1:
-  alias: Santa Clarita WA (San Joaquin)
+  alias: Delivery TA - Santa Clarita WA (San Joaquin)
   bpart: SWP_TA_CLWA1
   pathname: /CALSIM/SWP_TA_CLWA1/.*//.*/.*/
   table_convert: cfs_taf
@@ -1239,7 +1231,7 @@ SWP_TA_CLWA1:
   type: Delivery - TA
   units: cfs
 SWP_TA_CLWA2:
-  alias: Santa Clarita WA (South Coast)
+  alias: Delivery TA - Santa Clarita WA (South Coast)
   bpart: SWP_TA_CLWA2
   pathname: /CALSIM/SWP_TA_CLWA2/.*//.*/.*/
   table_convert: cfs_taf
@@ -1247,7 +1239,7 @@ SWP_TA_CLWA2:
   type: Delivery - TA
   units: cfs
 SWP_TA_CVWD:
-  alias: Coachella Valley WD
+  alias: Delivery TA - Coachella Valley WD
   bpart: SWP_TA_CVWD
   pathname: /CALSIM/SWP_TA_CVWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1255,7 +1247,7 @@ SWP_TA_CVWD:
   type: Delivery - TA
   units: cfs
 SWP_TA_DESERT:
-  alias: Desert WA
+  alias: Delivery TA - Desert WA
   bpart: SWP_TA_DESERT
   pathname: /CALSIM/SWP_TA_DESERT/.*//.*/.*/
   table_convert: cfs_taf
@@ -1263,7 +1255,7 @@ SWP_TA_DESERT:
   type: Delivery - TA
   units: cfs
 SWP_TA_DUDLEY:
-  alias: Dudley Ridge WD
+  alias: Delivery TA - Dudley Ridge WD
   bpart: SWP_TA_DUDLEY
   pathname: /CALSIM/SWP_TA_DUDLEY/.*//.*/.*/
   table_convert: cfs_taf
@@ -1271,7 +1263,7 @@ SWP_TA_DUDLEY:
   type: Delivery - TA
   units: cfs
 SWP_TA_EMPIRE:
-  alias: Empire West Side ID
+  alias: Delivery TA - Empire West Side ID
   bpart: SWP_TA_EMPIRE
   pathname: /CALSIM/SWP_TA_EMPIRE/.*//.*/.*/
   table_convert: cfs_taf
@@ -1279,7 +1271,7 @@ SWP_TA_EMPIRE:
   type: Delivery - TA
   units: cfs
 SWP_TA_KERNAG:
-  alias: Kern County WA (Ag)
+  alias: Delivery TA - Kern County WA (Ag)
   bpart: SWP_TA_KERNAG
   pathname: /CALSIM/SWP_TA_KERNAG/.*//.*/.*/
   table_convert: cfs_taf
@@ -1287,7 +1279,7 @@ SWP_TA_KERNAG:
   type: Delivery - TA
   units: cfs
 SWP_TA_KERNMI:
-  alias: Kern County WA (MI)
+  alias: Delivery TA - Kern County WA (MI)
   bpart: SWP_TA_KERNMI
   pathname: /CALSIM/SWP_TA_KERNMI/.*//.*/.*/
   table_convert: cfs_taf
@@ -1295,7 +1287,7 @@ SWP_TA_KERNMI:
   type: Delivery - TA
   units: cfs
 SWP_TA_KINGS:
-  alias: County of Kings
+  alias: Delivery TA - County of Kings
   bpart: SWP_TA_KINGS
   pathname: /CALSIM/SWP_TA_KINGS/.*//.*/.*/
   table_convert: cfs_taf
@@ -1303,7 +1295,7 @@ SWP_TA_KINGS:
   type: Delivery - TA
   units: cfs
 SWP_TA_LCID:
-  alias: Littlerock Creek ID
+  alias: Delivery TA - Littlerock Creek ID
   bpart: SWP_TA_LCID
   pathname: /CALSIM/SWP_TA_LCID/.*//.*/.*/
   table_convert: cfs_taf
@@ -1311,7 +1303,7 @@ SWP_TA_LCID:
   type: Delivery - TA
   units: cfs
 SWP_TA_MWA:
-  alias: Mojave WA
+  alias: Delivery TA - Mojave WA
   bpart: SWP_TA_MWA
   pathname: /CALSIM/SWP_TA_MWA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1319,7 +1311,7 @@ SWP_TA_MWA:
   type: Delivery - TA
   units: cfs
 SWP_TA_MWD:
-  alias: Metropolitan WDSC
+  alias: Delivery TA - Metropolitan WDSC
   bpart: SWP_TA_MWD
   pathname: /CALSIM/SWP_TA_MWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1327,7 +1319,7 @@ SWP_TA_MWD:
   type: Delivery - TA
   units: cfs
 SWP_TA_NAPA:
-  alias: Napa County FC&WCD
+  alias: Delivery TA - Napa County FC&WCD
   bpart: SWP_TA_NAPA
   pathname: /CALSIM/SWP_TA_NAPA/.*//.*/.*/
   table_convert: cfs_taf
@@ -1335,7 +1327,7 @@ SWP_TA_NAPA:
   type: Delivery - TA
   units: cfs
 SWP_TA_OAK:
-  alias: Oak Flat WD
+  alias: Delivery TA - Oak Flat WD
   bpart: SWP_TA_OAK
   pathname: /CALSIM/SWP_TA_OAK/.*//.*/.*/
   table_convert: cfs_taf
@@ -1343,7 +1335,7 @@ SWP_TA_OAK:
   type: Delivery - TA
   units: cfs
 SWP_TA_PWD:
-  alias: Palmdale WD
+  alias: Delivery TA - Palmdale WD
   bpart: SWP_TA_PWD
   pathname: /CALSIM/SWP_TA_PWD/.*//.*/.*/
   table_convert: cfs_taf
@@ -1351,7 +1343,7 @@ SWP_TA_PWD:
   type: Delivery - TA
   units: cfs
 SWP_TA_SB:
-  alias: Santa Barbara County FC&WCD
+  alias: Delivery TA - Santa Barbara County FC&WCD
   bpart: SWP_TA_SB
   pathname: /CALSIM/SWP_TA_SB/.*//.*/.*/
   table_convert: cfs_taf
@@ -1359,7 +1351,7 @@ SWP_TA_SB:
   type: Delivery - TA
   units: cfs
 SWP_TA_SBV:
-  alias: San Bernadino Valley MWD
+  alias: Delivery TA - San Bernadino Valley MWD
   bpart: SWP_TA_SBV
   pathname: /CALSIM/SWP_TA_SBV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1367,7 +1359,7 @@ SWP_TA_SBV:
   type: Delivery - TA
   units: cfs
 SWP_TA_SCV:
-  alias: Santa Clara Valley WD
+  alias: Delivery TA - Santa Clara Valley WD
   bpart: SWP_TA_SCV
   pathname: /CALSIM/SWP_TA_SCV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1375,7 +1367,7 @@ SWP_TA_SCV:
   type: Delivery - TA
   units: cfs
 SWP_TA_SGP:
-  alias: San Gorgonio Pass WA
+  alias: Delivery TA - San Gorgonio Pass WA
   bpart: SWP_TA_SGP
   pathname: /CALSIM/SWP_TA_SGP/.*//.*/.*/
   table_convert: cfs_taf
@@ -1383,7 +1375,7 @@ SWP_TA_SGP:
   type: Delivery - TA
   units: cfs
 SWP_TA_SGV:
-  alias: San Gabriel Valley MWD
+  alias: Delivery TA - San Gabriel Valley MWD
   bpart: SWP_TA_SGV
   pathname: /CALSIM/SWP_TA_SGV/.*//.*/.*/
   table_convert: cfs_taf
@@ -1391,7 +1383,7 @@ SWP_TA_SGV:
   type: Delivery - TA
   units: cfs
 SWP_TA_SLO:
-  alias: San Luis Obispo County FC&WCD
+  alias: Delivery TA - San Luis Obispo County FC&WCD
   bpart: SWP_TA_SLO
   pathname: /CALSIM/SWP_TA_SLO/.*//.*/.*/
   table_convert: cfs_taf
@@ -1399,7 +1391,7 @@ SWP_TA_SLO:
   type: Delivery - TA
   units: cfs
 SWP_TA_SOLANO:
-  alias: Solano County WA
+  alias: Delivery TA - Solano County WA
   bpart: SWP_TA_SOLANO
   pathname: /CALSIM/SWP_TA_SOLANO/.*//.*/.*/
   table_convert: cfs_taf
@@ -1407,7 +1399,7 @@ SWP_TA_SOLANO:
   type: Delivery - TA
   units: cfs
 SWP_TA_TULARE:
-  alias: Tulare Lake Basin WSD
+  alias: Delivery TA - Tulare Lake Basin WSD
   bpart: SWP_TA_TULARE
   pathname: /CALSIM/SWP_TA_TULARE/.*//.*/.*/
   table_convert: cfs_taf
@@ -1415,10 +1407,18 @@ SWP_TA_TULARE:
   type: Delivery - TA
   units: cfs
 SWP_TA_VC:
-  alias: Ventura County FCD
+  alias: Delivery TA - Ventura County FCD
   bpart: SWP_TA_VC
   pathname: /CALSIM/SWP_TA_VC/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
   type: Delivery - TA
   units: cfs
+S_SODSE:
+  alias: South of Delta Storage Expansion
+  bpart: S_SODSE
+  pathname: /CALSIM/S_SODSE/.*//.*/.*/
+  table_convert: orig
+  table_display: 9
+  type: Reservoir Storage
+  units: taf
