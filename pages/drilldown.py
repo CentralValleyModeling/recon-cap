@@ -41,11 +41,6 @@ for var in var_dict:
     bparts.append(var)
     aliases.append(var_dict[var]["alias"])
 
-
-# DataFrames for the summary tables
-df_tbl = make_summary_df(scen_aliases, df_dv, var_dict)
-df_tbl_res = make_ressum_df(scen_aliases, df_dv, var_dict)
-
 # Layout Starts Here
 def layout(**kwargs):
     b = kwargs.get("type", "C_CAA003")
