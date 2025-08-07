@@ -1,5 +1,6 @@
 # Directories #
 ######################
+.vscode/
 _sandbox/
 __pycache__/
 csv_export/
