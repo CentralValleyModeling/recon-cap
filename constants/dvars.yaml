@@ -4,7 +4,7 @@ C_CAA003:
   pathname: /CALSIM/C_CAA003/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Export
+  type: hide
   units: cfs
 C_CAA003_SWP:
   alias: Banks SWP Exports
@@ -36,7 +36,7 @@ NDOI:
   pathname: /CALSIM/NDOI/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delta
   units: cfs
 SWP_CO_FEATH:
   alias: SWP Article 56, Feather River
@@ -44,7 +44,7 @@ SWP_CO_FEATH:
   pathname: /CALSIM/SWP_CO_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_CO_NBAY:
   alias: SWP Article 56, North Bay Aqueduct
@@ -52,7 +52,7 @@ SWP_CO_NBAY:
   pathname: /CALSIM/SWP_CO_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_CO_TOTAL:
   alias: Total SWP SWP Article 56
@@ -60,7 +60,7 @@ SWP_CO_TOTAL:
   pathname: /CALSIM/SWP_CO_TOTAL/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_IN_FEATH:
   alias: SWP Article 21, Feather River
@@ -68,7 +68,7 @@ SWP_IN_FEATH:
   pathname: /CALSIM/SWP_IN_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_IN_NBAY:
   alias: SWP Article 21, North Bay Aqueduct
@@ -76,7 +76,7 @@ SWP_IN_NBAY:
   pathname: /CALSIM/SWP_IN_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_IN_TOTAL:
   alias: Total SWP Article 21
@@ -84,7 +84,7 @@ SWP_IN_TOTAL:
   pathname: /CALSIM/SWP_IN_TOTAL/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_TA_FEATH:
   alias: SWP Table A, Feather River
@@ -92,7 +92,7 @@ SWP_TA_FEATH:
   pathname: /CALSIM/SWP_TA_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_TA_NBAY:
   alias: SWP Table A, North Bay Aqueduct
@@ -100,7 +100,7 @@ SWP_TA_NBAY:
   pathname: /CALSIM/SWP_TA_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 SWP_TA_TOTAL:
   alias: SWP Table A Deliveries
@@ -108,7 +108,7 @@ SWP_TA_TOTAL:
   pathname: /CALSIM/SWP_TA_TOTAL/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Delivery
+  type: hide
   units: cfs
 S_FOLSM:
   alias: Folsom Reservoir

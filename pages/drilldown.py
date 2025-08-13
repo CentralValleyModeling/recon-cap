@@ -1,12 +1,11 @@
 # Imports
-from collections import defaultdict, namedtuple
+from collections import defaultdict
 
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 from dash import (
-    Input, Output, State, callback, dcc, html, register_page,
-    ALL, ctx  # pattern-matching + triggered context
+    Input, Output, State, callback, dcc, html, register_page, ALL, ctx
 )
 
 from charts.chart_layouts import ann_exc_plot, mon_exc_plot
@@ -36,31 +35,29 @@ register_page(
     order=6,
 )
 
-# ---- Static text ----
-# NOTE: load_markdown in your codebase returns a dcc.Markdown component
+# ---- Static text (your helper returns a dcc.Markdown component) ----
 drilldown_text = load_markdown("page_text/drilldown.md")
 
 # ---- Build mappings / groupings ----
-B_PARTS = list(var_dict.keys())
+ALL_BPARTS = list(var_dict.keys())
 
 def alias_label(b: str) -> str:
-    """Label = 'Alias — B_PART' (falls back to B_PART if alias missing)."""
+    """Label = Alias only (falls back to B_PART if alias missing)."""
     a = var_dict.get(b, {}).get("alias", "")
-    a_str = (str(a).strip() if a is not None else "")
-    return f"{a_str} — {b}" if a_str else b
+    return str(a).strip() if a else b
 
-# Group B-parts by "type" from YAML, skipping type=='hide'
-_type_groups = defaultdict(list)
-for b in B_PARTS:
-    _type = var_dict[b].get("type", "Other")
-    if str(_type).lower() == "hide":  # <-- skip hidden types
+# Group B-parts by YAML "type", skipping any with type=='hide'
+_grouped = defaultdict(list)
+for b in ALL_BPARTS:
+    t = var_dict[b].get("type", "Other")
+    if str(t).lower() == "hide":
         continue
-    _type_groups[_type].append(b)
+    _grouped[t].append(b)
 
 # Sort groups by type name; sort B-parts within group by alias then name
 TYPE_GROUPS = {
     t: sorted(blist, key=lambda bb: (str(var_dict[bb].get("alias", "")), bb))
-    for t, blist in sorted(_type_groups.items(), key=lambda kv: kv[0])
+    for t, blist in sorted(_grouped.items(), key=lambda kv: kv[0])
 }
 
 
@@ -68,10 +65,9 @@ TYPE_GROUPS = {
 def layout(**kwargs):
     b_default = kwargs.get("type", "C_CAA003")
 
-    # Left: filter pane (sticky, full height) with grouped radios
+    # Left: filter pane (fixed 25% width), grouped radios
     group_sections = []
     for t, blist in TYPE_GROUPS.items():
-        # One RadioItems per type-group
         group_sections.extend([
             html.H6(t, className="mt-3 mb-2 fw-bold"),
             dcc.RadioItems(
@@ -90,7 +86,7 @@ def layout(**kwargs):
             html.Div(
                 group_sections,
                 style={
-                    "maxHeight": "calc(100vh - 220px)", 
+                    "maxHeight": "calc(100vh - 220px)",  # room for climate selector
                     "overflowY": "auto",
                     "paddingRight": "6px",
                 },
@@ -106,18 +102,18 @@ def layout(**kwargs):
                 persistence_type="session",
             ),
         ],
-        md=4,
+        width=3,  # -> 25% of 12-col grid
         class_name="bg-light p-3",
         style={
             "position": "sticky",
-            "top": "0",             
+            "top": "0",              # adjust if you have a fixed navbar (e.g., "56px")
             "height": "100vh",
-            "overflow": "hidden",   
+            "overflow": "hidden",    # inner list scrolls
             "borderRight": "1px solid #e9ecef",
         },
     )
 
-    # Right: view pane (unchanged content; scrolls)
+    # Right: view pane (takes rest), all your plots
     view_pane = dbc.Col(
         [
             drilldown_text,
@@ -224,7 +220,7 @@ def layout(**kwargs):
             ),
             html.Div(id="output-container-range-slider"),
         ],
-        md=8,
+        width=9,  # -> 75% of 12-col grid
         class_name="py-3",
         style={"minHeight": "100vh", "overflow": "auto"},
     )
@@ -244,7 +240,7 @@ def layout(**kwargs):
 # CALLBACKS
 # =======================
 
-# Enforce single-selection across ALL group radios and expose the selected B-Part
+# Enforce single selection across ALL grouped radios and expose the selected B-Part
 @callback(
     Output({"type": "alias-group-radio", "group": ALL}, "value"),
     Output("b-part-store", "data"),
@@ -253,52 +249,49 @@ def layout(**kwargs):
 )
 def exclusive_radio_selection(values):
     """
-    values: list of current values from each group radio (one per group; value is B-Part or None).
-    Ensure only one group holds a non-None value at a time.
+    values: list of current values from each group radio (one per group; B-Part or None).
+    Keep only one selected across all groups.
     """
-    # If no trigger (initial call), keep what's provided; pick the first non-None as selected
-    triggered = ctx.triggered_id if ctx.triggered_id is not None else None
-
-    # Identify which index triggered (by matching group key)
+    # Identify which group triggered
+    groups_order = list(TYPE_GROUPS.keys())
+    triggered_id = ctx.triggered_id if ctx.triggered_id is not None else None
     trig_index = None
-    if triggered and isinstance(triggered, dict) and triggered.get("type") == "alias-group-radio":
-        # The ALL input order matches the order components were created in layout (TYPE_GROUPS iteration).
-        groups_order = list(TYPE_GROUPS.keys())
+    if isinstance(triggered_id, dict) and triggered_id.get("type") == "alias-group-radio":
         try:
-            trig_index = groups_order.index(triggered.get("group"))
+            trig_index = groups_order.index(triggered_id.get("group"))
         except ValueError:
             trig_index = None
 
     selected = None
 
-    # If user clicked something, prefer that group's value as the sole selection
+    # If user clicked in a specific group and chose a value, keep that and clear others
     if trig_index is not None and values[trig_index] is not None:
         selected = values[trig_index]
         new_values = [None] * len(values)
         new_values[trig_index] = selected
         return new_values, selected
 
-    # Otherwise, on initial render or if user de-selected, keep the first non-None (if any)
+    # Otherwise, pick first non-None value from existing state (initial render support)
     for v in values:
         if v is not None:
             selected = v
             break
 
-    # If none selected, fall back to first B-Part in first group
-    if selected is None:
-        first_group = next(iter(TYPE_GROUPS.values()))
-        selected = first_group[0] if first_group else None
+    # If still none, default to first item of first group
+    if selected is None and groups_order:
+        first_group_bparts = TYPE_GROUPS[groups_order[0]]
+        if first_group_bparts:
+            selected = first_group_bparts[0]
 
-    # Normalize: ensure only the first non-None remains set
+    # Normalize values: only one group has the selection
     new_values = [None] * len(values)
     if selected is not None:
-        # set it on whichever group currently has it (or the first group's default)
+        # set it where it already is, otherwise group 0
         for i, v in enumerate(values):
             if v == selected:
                 new_values[i] = selected
                 break
         else:
-            # not found; set on group 0
             new_values[0] = selected
 
     return new_values, selected
@@ -652,7 +645,6 @@ def populate_table(n_clicks):
 def display_updated_data(full_scen_table):
     if full_scen_table is None:
         return "No data in the table."
-    # Build dict as side-effect/validation step if you want
     scen_dict = {}
     for s in full_scen_table:
         if s.get("alias", "").strip() != "":
