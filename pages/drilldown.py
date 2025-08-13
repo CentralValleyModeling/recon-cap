@@ -92,7 +92,7 @@ def layout(**kwargs):
                 },
             ),
             html.Hr(),
-            html.Label("Climate (filter for all charts):"),
+            html.Label("Climate (filter for all charts):", className="fw-semibold"),
             dcc.Dropdown(
                 options=[{"label": c, "value": c} for c in CLIMATE_ORDER],
                 id="climate-filter",

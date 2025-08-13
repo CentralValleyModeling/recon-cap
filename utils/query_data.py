@@ -26,7 +26,7 @@ df_dv["SWP_IN_SOD"] = df_dv["SWP_IN_TOTAL"] - df_dv["SWP_IN_FEATH"]- df_dv["SWP_
 df_dv["EXPORTACTUALTDIF"] = df_dv["EXPORTACTUALTD"] + df_dv["EXPORTACTUALIF"]
 
 var_dict["SWP_TA_CO_SOD"] = {
-    "alias": "Total SWP Table and Carryover Delivery South of Delta",
+    "alias": "SWP Table A and Article 56 (South of Delta)",
     "bpart": "SWP_TA_CO_SOD",
     "pathname": None,
     "table_convert": "cfs_taf",
@@ -37,7 +37,7 @@ var_dict["SWP_TA_CO_SOD"] = {
 }
 
 var_dict["SWP_CO_SOD"] = {
-    "alias": "Total Carryover Delivery South of Delta",
+    "alias": "Article 56 (South of Delta)",
     "bpart": "SWP_CO_SOD",
     "pathname": None,
     "table_convert": "cfs_taf",
@@ -47,7 +47,7 @@ var_dict["SWP_CO_SOD"] = {
 }
 
 var_dict["SWP_IN_SOD"] = {
-    "alias": "Total Article 21 Delivery South of Delta",
+    "alias": "Article 21 (South of Delta)",
     "bpart": "SWP_IN_SOD",
     "pathname": None,
     "table_convert": "cfs_taf",
