@@ -1,5 +1,5 @@
 C_CAA003:
-  alias: Export - Total Banks Exports
+  alias: Total Banks Exports
   bpart: C_CAA003
   pathname: /CALSIM/C_CAA003/.*//.*/.*/
   table_convert: cfs_taf
@@ -7,7 +7,7 @@ C_CAA003:
   type: Export
   units: cfs
 C_CAA003_SWP:
-  alias: Export - Banks SWP Exports
+  alias: Banks SWP Exports
   bpart: C_CAA003_SWP
   pathname: /CALSIM/C_CAA003_SWP/.*//.*/.*/
   table_convert: cfs_taf
@@ -15,23 +15,23 @@ C_CAA003_SWP:
   type: Export
   units: cfs
 EXPORTACTUALIF:
-  alias: Export - Total North Delta Diversion
+  alias: Total North Delta Diversion
   bpart: EXPORTACTUALIF
   pathname: /CALSIM/EXPORTACTUALIF/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Export
   units: cfs
 EXPORTACTUALTD:
-  alias: Export - Total Through-Delta Exports
+  alias: Total Through-Delta Exports
   bpart: EXPORTACTUALTD
   pathname: /CALSIM/EXPORTACTUALTD/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Export
   units: cfs
 NDOI:
-  alias: Delta - Delta Outflow (NDOI)
+  alias: Delta Outflow (NDOI)
   bpart: NDOI
   pathname: /CALSIM/NDOI/.*//.*/.*/
   table_convert: cfs_taf
@@ -39,23 +39,23 @@ NDOI:
   type: Channel
   units: cfs
 SWP_CO_FEATH:
-  alias: Delivery - SWP Carryover Deliveries, Feather River
+  alias: SWP Article 56, Feather River
   bpart: SWP_CO_FEATH
   pathname: /CALSIM/SWP_CO_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_CO_NBAY:
-  alias: Delivery - SWP Carryover Deliveries, North Bay Aqueduct
+  alias: SWP Article 56, North Bay Aqueduct
   bpart: SWP_CO_NBAY
   pathname: /CALSIM/SWP_CO_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_CO_TOTAL:
-  alias: Delivery - Total SWP Carryover Deliveries
+  alias: Total SWP SWP Article 56
   bpart: SWP_CO_TOTAL
   pathname: /CALSIM/SWP_CO_TOTAL/.*//.*/.*/
   table_convert: cfs_taf
@@ -63,23 +63,23 @@ SWP_CO_TOTAL:
   type: Delivery
   units: cfs
 SWP_IN_FEATH:
-  alias: Delivery - SWP Article 21 Deliveries, Feather River
+  alias: SWP Article 21, Feather River
   bpart: SWP_IN_FEATH
   pathname: /CALSIM/SWP_IN_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_IN_NBAY:
-  alias: Delivery - SWP Article 21 Deliveries, North Bay Aqueduct
+  alias: SWP Article 21, North Bay Aqueduct
   bpart: SWP_IN_NBAY
   pathname: /CALSIM/SWP_IN_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_IN_TOTAL:
-  alias: Delivery - Total SWP Article 21 Deliveries
+  alias: Total SWP Article 21
   bpart: SWP_IN_TOTAL
   pathname: /CALSIM/SWP_IN_TOTAL/.*//.*/.*/
   table_convert: cfs_taf
@@ -87,20 +87,20 @@ SWP_IN_TOTAL:
   type: Delivery
   units: cfs
 SWP_TA_FEATH:
-  alias: Delivery - SWP Table A Deliveries, Feather River
+  alias: SWP Table A, Feather River
   bpart: SWP_TA_FEATH
   pathname: /CALSIM/SWP_TA_FEATH/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_TA_NBAY:
-  alias: Delivery - SWP Table A Deliveries, North Bay Aqueduct
+  alias: SWP Table A, North Bay Aqueduct
   bpart: SWP_TA_NBAY
   pathname: /CALSIM/SWP_TA_NBAY/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
-  type: Channel
+  type: Delivery
   units: cfs
 SWP_TA_TOTAL:
   alias: SWP Table A Deliveries
@@ -111,60 +111,60 @@ SWP_TA_TOTAL:
   type: Delivery
   units: cfs
 S_FOLSM:
-  alias: Storage - Folsom Storage
+  alias: Folsom Reservoir
   bpart: S_FOLSM
   pathname: /CALSIM/S_FOLSM/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_OROVL:
-  alias: Storage - Oroville Storage
+  alias: Oroville Reservoir
   bpart: S_OROVL
   pathname: /CALSIM/S_OROVL/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_SHSTA:
-  alias: Storage - Shasta Storage
+  alias: Shasta Reservoir
   bpart: S_SHSTA
   pathname: /CALSIM/S_SHSTA/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_SLUIS_CVP:
-  alias: Storage - San Luis Storage - CVP
+  alias: San Luis CVP
   bpart: S_SLUIS_CVP
   pathname: /CALSIM/S_SLUIS_CVP/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_SLUIS_SWP:
-  alias: Storage - San Luis Storage - SWP
+  alias: San Luis SWP
   bpart: S_SLUIS_SWP
   pathname: /CALSIM/S_SLUIS_SWP/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_TRNTY:
-  alias: Storage - Trinity Storage
+  alias: Trinity Reservoir
   bpart: S_TRNTY
   pathname: /CALSIM/S_TRNTY/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 S_SODSE:
-  alias: Storage - South of Delta Storage Expansion
+  alias: South of Delta Storage Expansion
   bpart: S_SODSE
   pathname: /CALSIM/S_SODSE/.*//.*/.*/
   table_convert: orig
   table_display: 9
-  type: Reservoir Storage
+  type: Storage
   units: taf
 WYT_SAC_:
   alias: Index -Sacramento Valley Index (SVI) WYT Classification
@@ -172,5 +172,5 @@ WYT_SAC_:
   pathname: /CALSIM/WYT_SAC_/.*//.*/.*/
   table_convert: orig
   table_display: 5
-  type: Channel
+  type: hide
   units: index
