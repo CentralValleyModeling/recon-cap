@@ -65,57 +65,108 @@ TYPE_GROUPS = {
 def layout(**kwargs):
     b_default = kwargs.get("type", "C_CAA003")
 
-    # Left: filter pane (fixed 25% width), grouped radios
-    group_sections = []
-    for t, blist in TYPE_GROUPS.items():
-        group_sections.extend([
-            html.H6(t, className="mt-3 mb-2 fw-bold"),
-            dcc.RadioItems(
-                id={"type": "alias-group-radio", "group": t},
-                options=[{"label": alias_label(b), "value": b} for b in blist],
-                value=b_default if b_default in blist else None,
-                labelStyle={"display": "block", "marginBottom": "6px"},
-                inputStyle={"marginRight": "8px"},
-                style={"marginLeft": "2px"},
-            ),
-        ])
+    # Build grouped, per-item radios with info tooltips
+    group_sections: list = []
+    tooltip_components: list = []  # collect all tooltips (must be siblings in DOM)
 
+    for t, blist in TYPE_GROUPS.items():
+        group_sections.append(html.H6(t, className="mt-3 mb-2 fw-bold"))
+        for b in blist:
+            info_id = {"type": "alias-info", "bpart": b}
+            radio_id = {"type": "alias-radio-item", "bpart": b}
+
+            # Row containing the single-option radio + info icon
+            group_sections.append(
+                html.Div(
+                    className="d-flex align-items-start justify-content-between",
+                    children=[
+                        # The radio (single-option RadioItems so we can style per-row)
+                        dcc.RadioItems(
+                            id=radio_id,
+                            options=[{"label": alias_label(b), "value": b}],
+                            value=b if b == b_default else None,
+                            labelStyle={"display": "inline-block"},
+                            inputStyle={"marginRight": "8px"},
+                            style={"flex": "1 1 auto"},
+                        ),
+                        # Info icon (target for tooltip)
+                        html.Span(
+                            "ⓘ",
+                            id=info_id,
+                            className="ms-2",
+                            style={
+                                "cursor": "help",
+                                "fontWeight": "600",
+                                "opacity": 0.7,
+                                "userSelect": "none",
+                            },
+                            title="",  # leave empty; we use dbc.Tooltip instead
+                        ),
+                    ],
+                    style={"marginBottom": "6px"},
+                )
+            )
+
+            # Tooltip (hover)
+            desc = var_dict.get(b, {}).get("description", "No description available.")
+            tooltip_components.append(
+                dbc.Tooltip(
+                    desc,
+                    target=info_id,
+                    placement="right",
+                    autohide=True,
+                    delay={"show": 200, "hide": 100},
+                    style={"maxWidth": "360px"},
+                )
+            )
+
+    # Left: filter pane (fixed 25% width), climate first
     filter_pane = dbc.Col(
-        [
-            html.Label("Select variable (by Alias):", className="fw-semibold"),
-            html.Div(
-                group_sections,
-                style={
-                    "maxHeight": "calc(100vh - 220px)",  # room for climate selector
-                    "overflowY": "auto",
-                    "paddingRight": "6px",
-                },
-            ),
-            html.Hr(),
-            html.Label("Climate (filter for all charts):", className="fw-semibold"),
-            dcc.Dropdown(
-                options=[{"label": c, "value": c} for c in CLIMATE_ORDER],
-                id="climate-filter",
-                value="2043_CC50",
-                style={"width": "100%"},
-                persistence=True,
-                persistence_type="session",
-            ),
-        ],
-        width=3,  # -> 25% of 12-col grid
+        width=3,
         class_name="bg-light p-3",
         style={
             "position": "sticky",
             "top": "0",              # adjust if you have a fixed navbar (e.g., "56px")
             "height": "100vh",
-            "overflow": "hidden",    # inner list scrolls
+            "overflow": "hidden",    # inner scroller below
             "borderRight": "1px solid #e9ecef",
         },
+        children=[
+            # Climate filter on top
+            html.Div(
+                [
+                    html.Label("Climate (filter for all charts):", className="fw-semibold"),
+                    dcc.Dropdown(
+                        options=[{"label": c, "value": c} for c in CLIMATE_ORDER],
+                        id="climate-filter",
+                        value="2043_CC50",
+                        style={"width": "100%"},
+                        persistence=True,
+                        persistence_type="session",
+                    ),
+                ],
+                className="mb-3",
+            ),
+
+            html.Label("Select variable (by Alias):", className="fw-semibold"),
+            # Scrollable list of grouped radios + tooltips
+            html.Div(
+                group_sections + tooltip_components,
+                style={
+                    "maxHeight": "calc(100vh - 220px)",  # room for climate dropdown + padding
+                    "overflowY": "auto",
+                    "paddingRight": "6px",
+                },
+            ),
+        ],
     )
 
     # Right: view pane (takes rest), all your plots
     view_pane = dbc.Col(
-        [
+        width=9,
+        class_name="py-3",
+        style={"minHeight": "100vh", "overflow": "auto"},
+        children=[
             drilldown_text,
             html.Br(),
             html.Div(id="my-output"),
@@ -220,9 +271,6 @@ def layout(**kwargs):
             ),
             html.Div(id="output-container-range-slider"),
         ],
-        width=9,  # -> 75% of 12-col grid
-        class_name="py-3",
-        style={"minHeight": "100vh", "overflow": "auto"},
     )
 
     # Single source of truth for selected B-Part
@@ -240,59 +288,56 @@ def layout(**kwargs):
 # CALLBACKS
 # =======================
 
-# Enforce single selection across ALL grouped radios and expose the selected B-Part
+# Enforce single selection across ALL per-item radios and expose the selected B-Part
 @callback(
-    Output({"type": "alias-group-radio", "group": ALL}, "value"),
+    Output({"type": "alias-radio-item", "bpart": ALL}, "value"),
     Output("b-part-store", "data"),
-    Input({"type": "alias-group-radio", "group": ALL}, "value"),
+    Input({"type": "alias-radio-item", "bpart": ALL}, "value"),
     prevent_initial_call=False,
 )
 def exclusive_radio_selection(values):
     """
-    values: list of current values from each group radio (one per group; B-Part or None).
-    Keep only one selected across all groups.
+    values: list of current values from each per-item radio (B-Part or None).
+    Keep only one selected across all items.
     """
-    # Identify which group triggered
-    groups_order = list(TYPE_GROUPS.keys())
+    # Determine which radio (if any) was interacted with
     triggered_id = ctx.triggered_id if ctx.triggered_id is not None else None
-    trig_index = None
-    if isinstance(triggered_id, dict) and triggered_id.get("type") == "alias-group-radio":
-        try:
-            trig_index = groups_order.index(triggered_id.get("group"))
-        except ValueError:
-            trig_index = None
 
     selected = None
+    if isinstance(triggered_id, dict) and triggered_id.get("type") == "alias-radio-item":
+        # Get the value from the matching index
+        # The order of inputs in `values` matches creation order in layout (TYPE_GROUPS iteration)
+        # Find that index:
+        creation_order = [b for _, blist in TYPE_GROUPS.items() for b in blist]
+        try:
+            trig_idx = creation_order.index(triggered_id.get("bpart"))
+        except ValueError:
+            trig_idx = None
+        if trig_idx is not None and values[trig_idx] is not None:
+            selected = values[trig_idx]
 
-    # If user clicked in a specific group and chose a value, keep that and clear others
-    if trig_index is not None and values[trig_index] is not None:
-        selected = values[trig_index]
-        new_values = [None] * len(values)
-        new_values[trig_index] = selected
-        return new_values, selected
+    # If no explicit trigger with a value, fall back to first non-None
+    if selected is None:
+        for v in values:
+            if v is not None:
+                selected = v
+                break
 
-    # Otherwise, pick first non-None value from existing state (initial render support)
-    for v in values:
-        if v is not None:
-            selected = v
-            break
+    # If still none, default to first B-Part in first group
+    if selected is None:
+        first_group = next(iter(TYPE_GROUPS.values()), [])
+        if first_group:
+            selected = first_group[0]
 
-    # If still none, default to first item of first group
-    if selected is None and groups_order:
-        first_group_bparts = TYPE_GROUPS[groups_order[0]]
-        if first_group_bparts:
-            selected = first_group_bparts[0]
-
-    # Normalize values: only one group has the selection
+    # Normalize the list so only the selected one is set
+    creation_order = [b for _, blist in TYPE_GROUPS.items() for b in blist]
     new_values = [None] * len(values)
     if selected is not None:
-        # set it where it already is, otherwise group 0
-        for i, v in enumerate(values):
-            if v == selected:
-                new_values[i] = selected
-                break
-        else:
-            new_values[0] = selected
+        try:
+            sel_idx = creation_order.index(selected)
+            new_values[sel_idx] = selected
+        except ValueError:
+            pass
 
     return new_values, selected
 

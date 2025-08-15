@@ -33,6 +33,7 @@ var_dict["SWP_TA_CO_SOD"] = {
     "table_display": "wy",
     "type": "Delivery",
     "units": "cfs",
+    "description": "Placeholder",
     
 }
 
@@ -44,6 +45,7 @@ var_dict["SWP_CO_SOD"] = {
     "table_display": "wy",
     "type": "Delivery",
     "units": "cfs",
+    "description": "Placeholder",
 }
 
 var_dict["SWP_IN_SOD"] = {
@@ -54,6 +56,7 @@ var_dict["SWP_IN_SOD"] = {
     "table_display": "wy",
     "type": "Delivery",
     "units": "cfs",
+    "description": "Placeholder",
 }
 
 
@@ -65,6 +68,7 @@ var_dict["EXPORTACTUALTDIF"] = {
     "table_display": "wy",
     "type": "Export",
     "units": "cfs",
+    "description": "Total Delta Exports from Jones and Banks pumping plants, including North Delta Diversion and Through-Delta",
 }
 
 # Special logic for the DCR:

@@ -6,6 +6,7 @@ C_CAA003:
   table_display: wy
   type: hide
   units: cfs
+  description: "Total exports from Banks Pumping Plant, including CVP wheeling (C_CAA003)"
 C_CAA003_SWP:
   alias: Banks SWP Exports
   bpart: C_CAA003_SWP
@@ -14,6 +15,7 @@ C_CAA003_SWP:
   table_display: wy
   type: Export
   units: cfs
+  description: "Banks Export for State Water Project (C_CAA003_SWP)"
 EXPORTACTUALIF:
   alias: Total North Delta Diversion
   bpart: EXPORTACTUALIF
@@ -22,6 +24,7 @@ EXPORTACTUALIF:
   table_display: wy
   type: Export
   units: cfs
+  description: "Volume of exports from Banks and Jones pumping plant from ONLY the North Delta Diversion (EXPORTACTUALIF)"
 EXPORTACTUALTD:
   alias: Total Through-Delta Exports
   bpart: EXPORTACTUALTD
@@ -30,14 +33,16 @@ EXPORTACTUALTD:
   table_display: wy
   type: Export
   units: cfs
+  description: "Volume of exports from Banks and Jones pumping plant, excluding North Delta Diversion (EXPORTACTUALTD)"
 NDOI:
-  alias: Delta Outflow (NDOI)
+  alias: Delta Outflow
   bpart: NDOI
   pathname: /CALSIM/NDOI/.*//.*/.*/
   table_convert: cfs_taf
   table_display: wy
   type: Delta
   units: cfs
+  description: "Total Delta Outflow, consistent with the calculation Net Delta Outflow Index (NDOI) specified in D-1641"
 SWP_CO_FEATH:
   alias: SWP Article 56, Feather River
   bpart: SWP_CO_FEATH
@@ -46,6 +51,7 @@ SWP_CO_FEATH:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_CO_NBAY:
   alias: SWP Article 56, North Bay Aqueduct
   bpart: SWP_CO_NBAY
@@ -54,6 +60,7 @@ SWP_CO_NBAY:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_CO_TOTAL:
   alias: Total SWP SWP Article 56
   bpart: SWP_CO_TOTAL
@@ -62,6 +69,7 @@ SWP_CO_TOTAL:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_IN_FEATH:
   alias: SWP Article 21, Feather River
   bpart: SWP_IN_FEATH
@@ -70,6 +78,7 @@ SWP_IN_FEATH:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_IN_NBAY:
   alias: SWP Article 21, North Bay Aqueduct
   bpart: SWP_IN_NBAY
@@ -78,6 +87,7 @@ SWP_IN_NBAY:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_IN_TOTAL:
   alias: Total SWP Article 21
   bpart: SWP_IN_TOTAL
@@ -86,6 +96,7 @@ SWP_IN_TOTAL:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_TA_FEATH:
   alias: SWP Table A, Feather River
   bpart: SWP_TA_FEATH
@@ -94,6 +105,7 @@ SWP_TA_FEATH:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_TA_NBAY:
   alias: SWP Table A, North Bay Aqueduct
   bpart: SWP_TA_NBAY
@@ -102,6 +114,7 @@ SWP_TA_NBAY:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 SWP_TA_TOTAL:
   alias: SWP Table A Deliveries
   bpart: SWP_TA_TOTAL
@@ -110,6 +123,7 @@ SWP_TA_TOTAL:
   table_display: wy
   type: hide
   units: cfs
+  description: "Placeholder"
 S_FOLSM:
   alias: Folsom Reservoir
   bpart: S_FOLSM
@@ -118,6 +132,7 @@ S_FOLSM:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_OROVL:
   alias: Oroville Reservoir
   bpart: S_OROVL
@@ -126,6 +141,7 @@ S_OROVL:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_SHSTA:
   alias: Shasta Reservoir
   bpart: S_SHSTA
@@ -134,6 +150,7 @@ S_SHSTA:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_SLUIS_CVP:
   alias: San Luis CVP
   bpart: S_SLUIS_CVP
@@ -142,6 +159,7 @@ S_SLUIS_CVP:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_SLUIS_SWP:
   alias: San Luis SWP
   bpart: S_SLUIS_SWP
@@ -150,6 +168,7 @@ S_SLUIS_SWP:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_TRNTY:
   alias: Trinity Reservoir
   bpart: S_TRNTY
@@ -158,6 +177,7 @@ S_TRNTY:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 S_SODSE:
   alias: South of Delta Storage Expansion
   bpart: S_SODSE
@@ -166,6 +186,7 @@ S_SODSE:
   table_display: 9
   type: Storage
   units: taf
+  description: "Placeholder"
 WYT_SAC_:
   alias: Index -Sacramento Valley Index (SVI) WYT Classification
   bpart: WYT_SAC_
@@ -174,3 +195,4 @@ WYT_SAC_:
   table_display: 5
   type: hide
   units: index
+  description: "Placeholder"
