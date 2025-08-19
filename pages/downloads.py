@@ -2,67 +2,39 @@
 # Dash multipage "Downloads" page listing references and model packages stored on Box.
 # - Uses a YAML/CSV manifest
 # - Card and Table views
-# - Search, category + tag filters, sort
+# - Search, category filter
 # - Download-only links (no preview)
 # - Filetype icons based on filename extension
+# - Compact meta line on cards: "YYYY • LoC 50% • SLR 15cm • Maintain"
+# - No sorting dropdown
 
 from __future__ import annotations
 import os
 from pathlib import Path
 from typing import List, Dict, Any
 
-import numpy as np
 import pandas as pd
 import dash
-from dash import html, dcc, dash_table, Input, Output, State, callback
+from dash import html, dcc, dash_table, Input, Output, callback
 
 dash.register_page(__name__, path="/downloads", name="Downloads")
 
 # -----------------------------------------------------------------------------
 # Configuration
 # -----------------------------------------------------------------------------
-# Path to your manifest file (.yaml/.yml or .csv)
-# Expected fields:
-# - title (str)            : display name
-# - description (str)      : short text
-# - category (str)         : e.g., "Reference" or "Model"
-# - tags (list[str] | str) : list or comma-separated
-# - box_link (str)         : Box shared link (https://*.box.com/s/<id>)
-# - filename (str, opt)    : nice filename (used to detect icon)
-# - size (str, opt)        : e.g., "23 MB"
-# - updated (str/date, opt): "YYYY-MM-DD" preferred
 MANIFEST_PATH = os.environ.get("DOWNLOADS_MANIFEST", "data/downloads_manifest.yaml")
 
 # -----------------------------------------------------------------------------
 # Helpers
 # -----------------------------------------------------------------------------
-def _coerce_tags(v) -> List[str]:
-    # Normalize tags into a list[str]
-    if v is None:
-        return []
-    # NaN as float
-    if isinstance(v, float) and pd.isna(v):
-        return []
-    # Already a python list
-    if isinstance(v, list):
-        return [str(x).strip() for x in v if str(x).strip()]
-    # Numpy array or Series
-    if isinstance(v, (np.ndarray, pd.Series)):
-        return [str(x).strip() for x in v.tolist() if str(x).strip()]
-    # Fallback: comma-separated string
-    return [t.strip() for t in str(v).split(",") if t.strip()]
-
 def _to_download_url(box_link: str) -> str:
-    # Append ?download=1 to force download
-    sep = "&" if "?" in box_link else "?"
-    return f"{box_link}{sep}download=1"
+    sep = "&" if isinstance(box_link, str) and "?" in box_link else "?"
+    return f"{box_link}{sep}download=1" if box_link else ""
 
 def _ext(filename: str | None) -> str:
     if not filename:
         return ""
-    name = str(filename)
-    # Handle .tar.gz, .tar.bz2, etc
-    lower = name.lower()
+    lower = str(filename).lower()
     if lower.endswith(".tar.gz"):
         return ".tar.gz"
     if lower.endswith(".tar.bz2"):
@@ -70,35 +42,33 @@ def _ext(filename: str | None) -> str:
     return Path(lower).suffix
 
 def _file_icon_from_ext(ext: str) -> str:
-    # Minimal, readable emoji icon set; expand as you wish.
     mapping = {
-        ".pdf": "📄",
-        ".doc": "📝",
-        ".docx": "📝",
-        ".rtf": "📝",
-        ".txt": "🗒️",
-        ".csv": "🧾",
-        ".tsv": "🧾",
-        ".json": "🧾",
-        ".yaml": "🧾",
-        ".yml": "🧾",
-        ".xls": "📊",
-        ".xlsx": "📊",
-        ".xlsm": "📊",
-        ".ppt": "📽️",
-        ".pptx": "📽️",
-        ".zip": "📦",
-        ".7z": "📦",
-        ".rar": "📦",
-        ".tar": "📦",
-        ".tar.gz": "📦",
-        ".tar.bz2": "📦",
+        ".pdf": "📄", ".doc": "📝", ".docx": "📝", ".rtf": "📝", ".txt": "🗒️",
+        ".csv": "🧾", ".tsv": "🧾", ".json": "🧾", ".yaml": "🧾", ".yml": "🧾",
+        ".xls": "📊", ".xlsx": "📊", ".xlsm": "📊",
+        ".ppt": "📽️", ".pptx": "📽️",
+        ".zip": "📦", ".7z": "📦", ".rar": "📦", ".tar": "📦", ".tar.gz": "📦", ".tar.bz2": "📦",
     }
     return mapping.get(ext, "🗂️")
 
 def _file_icon_for_item(item: Dict[str, Any]) -> str:
-    ext = _ext(item.get("filename"))
-    return _file_icon_from_ext(ext)
+    return _file_icon_from_ext(_ext(item.get("filename")))
+
+def _meta_line(item: Dict[str, Any]) -> str:
+    bits: List[str] = []
+    yr = (item.get("planning_horizon") or "").strip()
+    loc = (item.get("loc") or "").strip()
+    slr = (item.get("slr") or "").strip()
+    asm = (item.get("assumptions") or "").strip()
+    if yr:
+        bits.append(yr)
+    if loc:
+        bits.append(f"LoC {loc}%") if loc.replace("%", "").isdigit() else bits.append(f"LoC {loc}")
+    if slr:
+        bits.append(f"SLR {slr}")
+    if asm:
+        bits.append(asm)
+    return " • ".join(bits)
 
 # -----------------------------------------------------------------------------
 # Data loading
@@ -106,25 +76,22 @@ def _file_icon_for_item(item: Dict[str, Any]) -> str:
 def load_manifest(path: str | Path) -> pd.DataFrame:
     p = Path(path)
     if not p.exists():
-        # Fallback sample so page renders even if manifest is missing
         data = [
             {
-                "title": "DCR 2025 – Modeling Assumptions (Appendix A)",
-                "description": "Reference document used by the team.",
+                "title": "Modeling Assumptions",
+                "description": "Reference document",
                 "category": "Reference",
-                "tags": ["DCR 2025", "Assumptions"],
                 "box_link": "https://box.com/s/EXAMPLE_REF_ID",
-                "filename": "DCR2025_AppendixA.pdf",
+                "filename": "Appendix.pdf",
                 "size": "12 MB",
                 "updated": "2025-07-25",
             },
             {
-                "title": "CalSim3 – SJC Study Model Package",
-                "description": "Zipped model inputs/outputs for the San Joaquin Conveyance study.",
+                "title": "Study Model Package",
+                "description": "Zipped model inputs/outputs.",
                 "category": "Model",
-                "tags": ["CalSim3", "SJC"],
                 "box_link": "https://box.com/s/EXAMPLE_MODEL_ID",
-                "filename": "SJC_CalSim3_Model_2025-08-15.zip",
+                "filename": "Model.zip",
                 "size": "1.2 GB",
                 "updated": "2025-08-15",
             },
@@ -141,53 +108,37 @@ def load_manifest(path: str | Path) -> pd.DataFrame:
         else:
             raise ValueError("Manifest must be .yaml/.yml or .csv")
 
-    # Normalize columns
-    for col in ["title", "description", "category", "filename", "size", "box_link"]:
+    for col in [
+        "title", "description", "category", "box_link",
+        "filename", "size", "id", "planning_horizon", "loc", "slr", "assumptions"
+    ]:
         if col not in df.columns:
             df[col] = ""
-        df[col] = df[col].fillna("")
+        df[col] = df[col].fillna("").astype(str)
 
-    # Tags to list[str]
-    if "tags" not in df.columns:
-        df["tags"] = [[] for _ in range(len(df))]
-    else:
-        df["tags"] = df["tags"].apply(_coerce_tags)
-
-    # Updated -> datetime (keep original for display later)
     df["updated"] = pd.to_datetime(df.get("updated", pd.NaT), errors="coerce")
-
-    # Download URL
     df["download_url"] = df["box_link"].apply(_to_download_url)
-
     return df
 
 DF = load_manifest(MANIFEST_PATH)
-
-def _all_tags(df: pd.DataFrame) -> List[str]:
-    tags = set()
-    for ts in df["tags"]:
-        tags.update(ts)
-    return sorted(t for t in tags if t)
 
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
 def layout():
     categories = ["All"] + sorted([c for c in DF["category"].dropna().unique().tolist() if c])
-    tag_options = [{"label": t, "value": t} for t in _all_tags(DF)]
 
     return html.Div(
         className="p-4",
         children=[
             html.H1("Downloads", className="text-2xl mb-2"),
             html.P(
-                "Browse and download references and model packages stored in our Box repository.",
+                "Browse and download reports, supporting documents and model packages stored in our Box repository.",
                 className="mb-4",
             ),
 
-            # Controls
             html.Div(
-                className="grid gap-3 md:grid-cols-4 mb-4",
+                className="grid gap-3 md:grid-cols-2 mb-4",
                 children=[
                     dcc.Input(
                         id="dl-search",
@@ -200,25 +151,6 @@ def layout():
                         id="dl-category",
                         options=[{"label": c, "value": c} for c in categories],
                         value="All",
-                        clearable=False,
-                        className="w-full",
-                    ),
-                    dcc.Dropdown(
-                        id="dl-tags",
-                        options=tag_options,
-                        multi=True,
-                        placeholder="Filter by tags",
-                        className="w-full",
-                    ),
-                    dcc.Dropdown(
-                        id="dl-sort",
-                        options=[
-                            {"label": "Newest", "value": "newest"},
-                            {"label": "Oldest", "value": "oldest"},
-                            {"label": "Title A–Z", "value": "title_az"},
-                            {"label": "Title Z–A", "value": "title_za"},
-                        ],
-                        value="newest",
                         clearable=False,
                         className="w-full",
                     ),
@@ -236,7 +168,6 @@ def layout():
 
             html.Div(id="dl-content", className="mt-4"),
 
-            # Hidden store of raw data (strings only for serialization)
             dcc.Store(
                 id="dl-store",
                 data=DF.assign(
@@ -246,15 +177,14 @@ def layout():
         ],
     )
 
-layout = layout  # Dash expects a callable or object
+layout = layout
 
 # -----------------------------------------------------------------------------
 # Rendering helpers
 # -----------------------------------------------------------------------------
-def _filter_sort_records(records: List[Dict[str, Any]], q: str, category: str, tags: List[str], sort: str):
+def _filter_records(records: List[Dict[str, Any]], q: str, category: str):
     df = pd.DataFrame(records)
 
-    # Filter: search
     if q:
         qlow = q.strip().lower()
         mask = (
@@ -264,27 +194,10 @@ def _filter_sort_records(records: List[Dict[str, Any]], q: str, category: str, t
         )
         df = df[mask]
 
-    # Filter: category
     if category and category != "All":
         df = df[df["category"] == category]
 
-    # Filter: tags (AND)
-    if tags:
-        df = df[df["tags"].apply(lambda ts: all(t in ts for t in tags))]
-
-    # Sort
-    if sort == "newest":
-        df["_udt"] = pd.to_datetime(df["updated"], errors="coerce")
-        df = df.sort_values(by=["_udt", "title"], ascending=[False, True])
-    elif sort == "oldest":
-        df["_udt"] = pd.to_datetime(df["updated"], errors="coerce")
-        df = df.sort_values(by=["_udt", "title"], ascending=[True, True])
-    elif sort == "title_az":
-        df = df.sort_values(by="title", ascending=True)
-    elif sort == "title_za":
-        df = df.sort_values(by="title", ascending=False)
-
-    return df.drop(columns=[c for c in ["_udt"] if c in df.columns])
+    return df
 
 def _category_badge(category: str) -> html.Span:
     return html.Span(
@@ -294,6 +207,7 @@ def _category_badge(category: str) -> html.Span:
 
 def _card(item: Dict[str, Any]) -> html.Div:
     icon = _file_icon_for_item(item)
+
     subtitle_bits = []
     if item.get("filename"):
         subtitle_bits.append(item["filename"])
@@ -302,6 +216,8 @@ def _card(item: Dict[str, Any]) -> html.Div:
     if item.get("updated"):
         subtitle_bits.append(f"Updated {item['updated']}")
     subtitle = " • ".join(subtitle_bits)
+
+    meta = _meta_line(item)
 
     return html.Div(
         className="rounded-2xl shadow p-4 border",
@@ -319,10 +235,8 @@ def _card(item: Dict[str, Any]) -> html.Div:
                                 className="text-sm text-gray-600 mb-1 flex items-center gap-2",
                                 children=[_category_badge(item.get("category", "")), subtitle],
                             ),
-                            html.Div(
-                                className="text-sm mb-3",
-                                children=item.get("description", ""),
-                            ),
+                            html.Div(item.get("description", ""), className="text-sm mb-2"),
+                            html.Div(meta, className="text-sm text-gray-700 mb-3") if meta else html.Div(),
                         ]
                     ),
                     html.Div(
@@ -347,26 +261,25 @@ def _cards_grid(df: pd.DataFrame) -> html.Div:
 
 def _table(df: pd.DataFrame) -> html.Div:
     tdf = df.copy()
-    # Flatten tags and compute icon+title label
-    tdf["tags"] = tdf["tags"].apply(lambda ts: ", ".join(ts))
-    # Emoji + title combined column
+
     def title_with_icon(row):
         icon = _file_icon_from_ext(_ext(row.get("filename", "")))
         return f"{icon} {row.get('title','(Untitled)')}"
     tdf["Title"] = tdf.apply(title_with_icon, axis=1)
 
     tdf = tdf[[
-        "Title", "category", "tags", "filename", "size", "updated", "download_url"
+        "Title", "id", "category", "planning_horizon", "loc", "slr",
+        "assumptions", "download_url"
     ]].rename(columns={
+        "id": "ID",
         "category": "Category",
-        "tags": "Tags",
-        "filename": "File",
-        "size": "Size",
-        "updated": "Updated",
+        "planning_horizon": "Planning Horizon",
+        "loc": "Level of Concern",
+        "slr": "SLR",
+        "assumptions": "Assumptions",
         "download_url": "Download",
     })
 
-    # Convert the download URL into markdown link
     tdf["Download"] = tdf["Download"].apply(lambda u: f"[Download]({u})")
 
     return html.Div([
@@ -377,11 +290,11 @@ def _table(df: pd.DataFrame) -> html.Div:
                 {"name": c, "id": c, "presentation": "markdown" if c in ["Download"] else "input"}
                 for c in tdf.columns
             ],
-            page_size=12,
+            page_size=9999,
             sort_action="native",
             filter_action="native",
             style_cell={"textAlign": "left", "whiteSpace": "normal", "height": "auto"},
-            style_table={"overflowX": "auto"},
+            style_table={"overflowX": "auto", "overflowY": "auto"},
             markdown_options={"link_target": "_blank"},
         )
     ])
@@ -394,15 +307,10 @@ def _table(df: pd.DataFrame) -> html.Div:
     Input("dl-store", "data"),
     Input("dl-search", "value"),
     Input("dl-category", "value"),
-    Input("dl-tags", "value"),
-    Input("dl-sort", "value"),
     Input("dl-view-mode", "value"),
 )
-def render_content(records, q, category, tags, sort, view_mode):
-    df = _filter_sort_records(records, q or "", category or "All", tags or [], sort or "newest")
-
+def render_content(records, q, category, view_mode):
+    df = _filter_records(records, q or "", category or "All")
     if view_mode == "table":
         return _table(df)
-
-    # Card view (uses raw URLs)
     return _cards_grid(df)

@@ -1,26 +1,259 @@
 - title: "SWP Climate Adaptation Strategy Main Report"
   description: The SWP Climate Adaptation Strategy main report.
-  category: Report
-  tags: [main report]
+  category: Main Report
   box_link: https://cadwr.box.com/s/yfrzk3xxwic3xxiljhl2qqh6m4l7ymth
   filename: SWP-AdaptationStrategy_Final.pdf
-  size: 4.3 MB
-  updated: 2025-08-15
+
+- title: "Adaptation Strategy Brochure"
+  description: A concise, infographic-style executive brief summarizing the main report’s key findings and highlights.
+  category: Supporting Document
+  box_link: https://cadwr.box.com/s/gyennrbljwd2y4s0u2z6lmx54pwmypn8
+  filename: SWP-Adaptation Strategy_Brochure_Final_2025.pdf
 
 - title: "Adaptation Strategy Appendix A: Modeling Assumptions"
   description: Technical appendix to the SWP Climate Adaptation Strategy main report.
   category: Supporting Document
-  tags: [appendix]
   box_link: https://cadwr.box.com/s/ue7n88905mk9bhu8lvul5wbnsysrnwmq
   filename: SWP-AdaptationStrategy_AppendixA_ModelingAssumptions.pdf
-  size: 2.5 MB
-  updated: 2025-07-28
 
 - title: "Adaptation Strategy Appendix B: Alignment With State Policy and Other Plans"
   description: Technical appendix to the SWP Climate Adaptation Strategy main report.
   category: Supporting Document
-  tags: [appendix]
   box_link: https://cadwr.box.com/s/82un0awqnrv0981foe3gdkjsd5qtcfqc
   filename: SWP-AdaptationStrategy-SWP_AppendixB_AlignmentOtherDocs.pdf
-  size: 318 KB
-  updated: 2025-07-24
+
+- title: "Adaptation Strategy Additional Subsidence Modeling Information"
+  description: Support document for the SWP Climate Adaptation Strategy main report.
+  category: Supporting Document
+  box_link: https://cadwr.box.com/s/30fxtrzbe0g9u1k3m9vsv4hritit3w5w
+  filename: SWP-AdaptationStrategy_Additional Subsidence Modeling Information.pdf
+
+- title: 'CalSim 3 Model: CCA1'
+  id: CCA1
+  description: 'Current Conditions Baseline CalSim 3 Model'
+  category: CalSim 3 model
+  planning_horizon: '2023'
+  loc: N/A
+  slr: 0cm
+  assumptions: Existing
+  box_link: https://cadwr.box.com/s/phb64x7uex6kjd6qg2qsgosica4sc52q
+
+- title: 'CalSim 3 Model: CCA26'
+  id: CCA26
+  description: CalSim 3 Model for 2043 50% level of concern, with No Adaptation
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: No Adaptation
+  box_link: https://cadwr.box.com/s/5k33jl00veo4lls0o2vahn2c9oh43ydw
+
+- title: 'CalSim 3 Model: CCA4'
+  id: CCA4
+  description: CalSim 3 Model for 2043 50% level of concern, with Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: Maintain
+  box_link: https://cadwr.box.com/s/tmfn2oq1w39e1i7id5pljp8pnsu9257e
+
+- title: 'CalSim 3 Model: CCA6'
+  id: CCA6
+  description: CalSim 3 Model for 2043 50% level of concern, with DCP + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: DCP + Maintain
+  box_link: https://cadwr.box.com/s/7832s6jtrky11mq7wrss7hazltxgmmv2
+
+- title: 'CalSim 3 Model: CCA8'
+  id: CCA8
+  description: CalSim 3 Model for 2043 50% level of concern, with FIRO + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: FIRO + Maintain
+  box_link: https://cadwr.box.com/s/5y860x49lvbkgv77k13epbix1armzrey
+
+- title: 'CalSim 3 Model: CCA10'
+  id: CCA10
+  description: CalSim 3 Model for 2043 50% level of concern, with Storage + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: Storage + Maintain
+  box_link: https://cadwr.box.com/s/d2blf7xzaxd78sy09b8wgevfsnfeslxa
+
+- title: 'CalSim 3 Model: CCA12'
+  id: CCA12
+  description: CalSim 3 Model for 2043 50% level of concern, with Combo
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '50'
+  slr: 15cm
+  assumptions: Combo
+  box_link: https://cadwr.box.com/s/cs1fqnohmqnfyw1ceg09ic8t91007boi
+
+- title: 'CalSim 3 Model: CCA27'
+  id: CCA27
+  description: CalSim 3 Model for 2043 95% level of concern, with No Adaptation
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: No Adaptation
+  box_link: https://cadwr.box.com/s/921t4d10pibrrctkslawxms9k4hr14qt
+
+- title: 'CalSim 3 Model: CCA5'
+  id: CCA5
+  description: CalSim 3 Model for 2043 95% level of concern, with Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: Maintain
+  box_link: https://cadwr.box.com/s/0trhpsvf89crmdc62pm0ugwfvp8usrpv
+
+- title: 'CalSim 3 Model: CCA7'
+  id: CCA7
+  description: CalSim 3 Model for 2043 95% level of concern, with DCP + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: DCP + Maintain
+  box_link: https://cadwr.box.com/s/bioqh58rrtuisjv7rkwqgmykfbwmlhln
+
+- title: 'CalSim 3 Model: CCA9'
+  id: CCA9
+  description: CalSim 3 Model for 2043 95% level of concern, with FIRO + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: FIRO + Maintain
+  box_link: https://cadwr.box.com/s/jbcponiybl9ie64lpxfgx9q98m282inx
+
+- title: 'CalSim 3 Model: CCA11'
+  id: CCA11
+  description: CalSim 3 Model for 2043 95% level of concern, with Storage + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: Storage + Maintain
+  box_link: https://cadwr.box.com/s/g7zqb112ey3gh7ju9abf1ie1y31ezu2e
+
+- title: 'CalSim 3 Model: CCA13'
+  id: CCA13
+  description: CalSim 3 Model for 2043 95% level of concern, with Combo
+  category: CalSim 3 model
+  planning_horizon: '2043'
+  loc: '95'
+  slr: 30cm
+  assumptions: Combo
+  box_link: https://cadwr.box.com/s/4vf3rri983ze9bdur05elstoyt8p06w8
+
+- title: 'CalSim 3 Model: CCA16'
+  id: CCA16
+  description: CalSim 3 Model for 2085 50% level of concern, with Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '50'
+  slr: 55cm
+  assumptions: Maintain
+  box_link: https://cadwr.box.com/s/8e2pz4xjn41j6detnaxmkb8m4t5e5p0d
+
+- title: 'CalSim 3 Model: CCA18'
+  id: CCA18
+  description: CalSim 3 Model for 2085 50% level of concern, with DCP + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '50'
+  slr: 55cm
+  assumptions: DCP + Maintain
+  box_link: https://cadwr.box.com/s/a5oztzdk3lyu6g9fgdcpk522gaan6uz3
+
+- title: 'CalSim 3 Model: CCA20'
+  id: CCA20
+  description: CalSim 3 Model for 2085 50% level of concern, with FIRO + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '50'
+  slr: 55cm
+  assumptions: FIRO + Maintain
+  box_link: https://cadwr.box.com/s/1s6551nknert2acs4algvk7uuy8w9v98
+
+- title: 'CalSim 3 Model: CCA22'
+  id: CCA22
+  description: CalSim 3 Model for 2085 50% level of concern, with Storage + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '50'
+  slr: 55cm
+  assumptions: Storage + Maintain
+  box_link: https://cadwr.box.com/s/g8ny7qs8wl0f1hptvpthb6sxwge7dqs2
+
+- title: 'CalSim 3 Model: CCA24'
+  id: CCA24
+  description: CalSim 3 Model for 2085 50% level of concern, with Combo
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '50'
+  slr: 55cm
+  assumptions: Combo
+  box_link: https://cadwr.box.com/s/b2a7d99selk3fqdf32t9bn4ktrtjxlu4
+
+- title: 'CalSim 3 Model: CCA17'
+  id: CCA17
+  description: CalSim 3 Model for 2085 75% level of concern, with Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '75'
+  slr: 105cm
+  assumptions: Maintain
+  box_link: https://cadwr.box.com/s/2vt6vgdhunzirsu6ge1xyznrdurip2yb
+
+- title: 'CalSim 3 Model: CCA19'
+  id: CCA19
+  description: CalSim 3 Model for 2085 75% level of concern, with DCP + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '75'
+  slr: 105cm
+  assumptions: DCP + Maintain
+  box_link: https://cadwr.box.com/s/5wk9tz6ai6xviiis9re9mlj49j7hnqm3
+
+- title: 'CalSim 3 Model: CCA21'
+  id: CCA21
+  description: CalSim 3 Model for 2085 75% level of concern, with FIRO + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '75'
+  slr: 105cm
+  assumptions: FIRO + Maintain
+  box_link: https://cadwr.box.com/s/8ot7vfew6e5jl3ynzcmqxjhzfzs3ho0p
+
+- title: 'CalSim 3 Model: CCA23'
+  id: CCA23
+  description: CalSim 3 Model for 2085 75% level of concern, with Storage + Maintain
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '75'
+  slr: 105cm
+  assumptions: Storage + Maintain
+  box_link: https://cadwr.box.com/s/pq1302bdtq3jd4f9v67984dz3gl3oyul
+
+- title: 'CalSim 3 Model: CCA25'
+  id: CCA25
+  description: CalSim 3 Model for 2085 75% level of concern, with Combo
+  category: CalSim 3 model
+  planning_horizon: '2085'
+  loc: '75'
+  slr: 105cm
+  assumptions: Combo
+  box_link: https://cadwr.box.com/s/pl2qhnr1e8x6amji45ll8po1eawf10zp

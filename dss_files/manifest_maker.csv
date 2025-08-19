@@ -1,0 +1,24 @@
+﻿title,description,category,id,planning horizon,loc,slr,assumptions,box_link
+CalSim 3 Model: CCA1,CalSim 3 Model for ,CalSim 3 model,CCA1,2023,N/A,0cm,Existing,https://cadwr.box.com/s/phb64x7uex6kjd6qg2qsgosica4sc52q
+CalSim 3 Model: CCA26,"CalSim 3 Model for 2043 50% level of concern, with No Adaptation",CalSim 3 model,CCA26,2043,50,15cm,No Adaptation,https://cadwr.box.com/s/5k33jl00veo4lls0o2vahn2c9oh43ydw
+CalSim 3 Model: CCA4,"CalSim 3 Model for 2043 50% level of concern, with Maintain",CalSim 3 model,CCA4,2043,50,15cm,Maintain,https://cadwr.box.com/s/tmfn2oq1w39e1i7id5pljp8pnsu9257e
+CalSim 3 Model: CCA6,"CalSim 3 Model for 2043 50% level of concern, with DCP + Maintain",CalSim 3 model,CCA6,2043,50,15cm,DCP + Maintain,https://cadwr.box.com/s/7832s6jtrky11mq7wrss7hazltxgmmv2
+CalSim 3 Model: CCA8,"CalSim 3 Model for 2043 50% level of concern, with FIRO + Maintain",CalSim 3 model,CCA8,2043,50,15cm,FIRO + Maintain,https://cadwr.box.com/s/5y860x49lvbkgv77k13epbix1armzrey
+CalSim 3 Model: CCA10,"CalSim 3 Model for 2043 50% level of concern, with Storage + Maintain",CalSim 3 model,CCA10,2043,50,15cm,Storage + Maintain,https://cadwr.box.com/s/d2blf7xzaxd78sy09b8wgevfsnfeslxa
+CalSim 3 Model: CCA12,"CalSim 3 Model for 2043 50% level of concern, with Combo",CalSim 3 model,CCA12,2043,50,15cm,Combo,https://cadwr.box.com/s/cs1fqnohmqnfyw1ceg09ic8t91007boi
+CalSim 3 Model: CCA27,"CalSim 3 Model for 2043 95% level of concern, with No Adaptation",CalSim 3 model,CCA27,2043,95,30cm,No Adaptation,https://cadwr.box.com/s/921t4d10pibrrctkslawxms9k4hr14qt
+CalSim 3 Model: CCA5,"CalSim 3 Model for 2043 95% level of concern, with Maintain",CalSim 3 model,CCA5,2043,95,30cm,Maintain,https://cadwr.box.com/s/0trhpsvf89crmdc62pm0ugwfvp8usrpv
+CalSim 3 Model: CCA7,"CalSim 3 Model for 2043 95% level of concern, with DCP + Maintain",CalSim 3 model,CCA7,2043,95,30cm,DCP + Maintain,https://cadwr.box.com/s/bioqh58rrtuisjv7rkwqgmykfbwmlhln
+CalSim 3 Model: CCA9,"CalSim 3 Model for 2043 95% level of concern, with FIRO + Maintain",CalSim 3 model,CCA9,2043,95,30cm,FIRO + Maintain,https://cadwr.box.com/s/jbcponiybl9ie64lpxfgx9q98m282inx
+CalSim 3 Model: CCA11,"CalSim 3 Model for 2043 95% level of concern, with Storage + Maintain",CalSim 3 model,CCA11,2043,95,30cm,Storage + Maintain,https://cadwr.box.com/s/g7zqb112ey3gh7ju9abf1ie1y31ezu2e
+CalSim 3 Model: CCA13,"CalSim 3 Model for 2043 95% level of concern, with Combo",CalSim 3 model,CCA13,2043,95,30cm,Combo,https://cadwr.box.com/s/4vf3rri983ze9bdur05elstoyt8p06w8
+CalSim 3 Model: CCA16,"CalSim 3 Model for 2085 50% level of concern, with Maintain",CalSim 3 model,CCA16,2085,50,55cm,Maintain,https://cadwr.box.com/s/8e2pz4xjn41j6detnaxmkb8m4t5e5p0d
+CalSim 3 Model: CCA18,"CalSim 3 Model for 2085 50% level of concern, with DCP + Maintain",CalSim 3 model,CCA18,2085,50,55cm,DCP + Maintain,https://cadwr.box.com/s/a5oztzdk3lyu6g9fgdcpk522gaan6uz3
+CalSim 3 Model: CCA20,"CalSim 3 Model for 2085 50% level of concern, with FIRO + Maintain",CalSim 3 model,CCA20,2085,50,55cm,FIRO + Maintain,https://cadwr.box.com/s/1s6551nknert2acs4algvk7uuy8w9v98
+CalSim 3 Model: CCA22,"CalSim 3 Model for 2085 50% level of concern, with Storage + Maintain",CalSim 3 model,CCA22,2085,50,55cm,Storage + Maintain,https://cadwr.box.com/s/g8ny7qs8wl0f1hptvpthb6sxwge7dqs2
+CalSim 3 Model: CCA24,"CalSim 3 Model for 2085 50% level of concern, with Combo",CalSim 3 model,CCA24,2085,50,55cm,Combo,https://cadwr.box.com/s/b2a7d99selk3fqdf32t9bn4ktrtjxlu4
+CalSim 3 Model: CCA17,"CalSim 3 Model for 2085 75% level of concern, with Maintain",CalSim 3 model,CCA17,2085,75,105cm,Maintain,https://cadwr.box.com/s/2vt6vgdhunzirsu6ge1xyznrdurip2yb
+CalSim 3 Model: CCA19,"CalSim 3 Model for 2085 75% level of concern, with DCP + Maintain",CalSim 3 model,CCA19,2085,75,105cm,DCP + Maintain,https://cadwr.box.com/s/5wk9tz6ai6xviiis9re9mlj49j7hnqm3
+CalSim 3 Model: CCA21,"CalSim 3 Model for 2085 75% level of concern, with FIRO + Maintain",CalSim 3 model,CCA21,2085,75,105cm,FIRO + Maintain,https://cadwr.box.com/s/8ot7vfew6e5jl3ynzcmqxjhzfzs3ho0p
+CalSim 3 Model: CCA23,"CalSim 3 Model for 2085 75% level of concern, with Storage + Maintain",CalSim 3 model,CCA23,2085,75,105cm,Storage + Maintain,https://cadwr.box.com/s/pq1302bdtq3jd4f9v67984dz3gl3oyul
+CalSim 3 Model: CCA25,"CalSim 3 Model for 2085 75% level of concern, with Combo",CalSim 3 model,CCA25,2085,75,105cm,Combo,https://cadwr.box.com/s/pl2qhnr1e8x6amji45ll8po1eawf10zp

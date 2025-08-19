@@ -6,7 +6,7 @@ GLOBAL_MARGIN = {
 }
 
 THEME_COLORS = {
-    "blue": "#007fbd",
+    "blue": "#014365",
 }
 
 PLOT_COLORS = [
